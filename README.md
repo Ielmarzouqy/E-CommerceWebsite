@@ -5,27 +5,21 @@ An eCommerce website with Admin interface.
 
  The application includes three user roles:
 ## Admin features
- - Create and manage vendore manager information 
- - View user information
   create and update delete categories
  - create subcategories
- - add product
- - View statistic of product
- - 
- 
- ## Vendor manager features
- - create and update delete categories
- - create subcategories
- - add product
- - use of a bank transfer API as paypal payoner
+ - create and update delete products
  - View statistic of product
  - View user information
+ - use of a bank transfer API as paypal payoner
+ - view order by customer
+ 
 
 ## client features
 - Create account 
 - view all product 
 - Buy a product
 - add product to shopping cart 
+- make payment
 
 
 
