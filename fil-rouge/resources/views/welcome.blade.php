@@ -17,8 +17,8 @@
          <script src="https://cdn.tailwindcss.com"></script>
 
     </head>
-    <body class="antialiased">
-        <div class="relative  sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    <body class="antialiased bg-orange-100">
+        <div class="relative  sm:justify-center sm:items-center min-h-screen  bg-center  dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
                 <div dir="rtl" class="  sm:top-0 sm:right-0 p-6 text-right">
                     <a href="" class="ml-4 font-semibold bg-fuchsia-900 text-white border-r-2 rounded-md p-2 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">About</a>
@@ -58,11 +58,26 @@
     <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
 
     <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
-        <img src="./asset/images/phone1.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/phone2.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/phone3.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/phone4.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/f1.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/f2.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/f3.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/f4.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
     </div>
+    <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
 
+    <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
+        <img src="./asset/images/e1.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/e2.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/e3.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/e4.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+    </div>
+    <footer class="bg-amber-200 p-4 h-20 block" >
+        <a href="">About</a>
+        <a href="">About</a>
+        <a href="">About</a>
+        <a href="">About</a>
+
+
+    </footer>
     </body>
 </html>
