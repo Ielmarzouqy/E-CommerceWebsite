@@ -35,7 +35,7 @@
                             @endif
                         @endauth
                         <div class="flex justify-center m-4 ">
-                            <img src="./asset/images/logo1.png" class="w-40 " alt="logo">
+                            <img src="./asset/images/logo3.png" class="w-40 " alt="logo">
                         </div>
                 </div>
             @endif
