@@ -18,13 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/sidebar', function () {
-    return view('/sidebar');
+    return view('layouts.sidebar');
 });
 Route::get('/shop', function () {
     return view('/shop');
 });
 Route::get('/contact', function(){
 return view('/contact-us');
+});
+Route::get('/alert', function(){
+    return view('layouts.alert');
 });
 
 Route::get('/dashboard', function () {
