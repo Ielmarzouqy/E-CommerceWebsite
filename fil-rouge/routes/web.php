@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/sidebar', function () {
+    return view('/sidebar');
+});
+Route::get('/shop', function () {
+    return view('/shop');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +35,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+// Route::get('product',function(){
+//     return 'products.create';
+// });
