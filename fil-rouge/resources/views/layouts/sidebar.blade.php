@@ -2,6 +2,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- component -->
+@extends('../dashboard')
+@section('dash')
+    
+
 <div class="w-full h-full">
    
         <div class="flex flex-no-wrap">
@@ -10,12 +14,14 @@
             
             <div style="min-height: 716px" class="w-64 absolute sm:relative bg-orange-100 shadow md:h-full flex-col justify-between  sm:flex">
                 <div class="px-8">
-                    <div class="h-16 w-full flex items-center">
-                        <img src="../asset/images/logo3.png" alt="">
-                    </div>
+                    <a href="{{ url('/')}}">
+                        <div class="h-16 w-full flex items-center">
+                            <img src="../asset/images/logo3.png" alt="">
+                        </div>
+                    </a>
                     <ul class="mt-12">
                         <li class="flex w-full justify-between text-black cursor-pointer items-center mb-6">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
+                            <a href="{{url('/statistic')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-fuchsia-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <rect x="4" y="4" width="6" height="6" rx="1"></rect>
@@ -28,7 +34,7 @@
                             {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">5</div> --}}
                         </li>
                         <li class="flex w-full justify-between text-black hover:text-fuchsia-500 cursor-pointer items-center mb-6">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                            <a href="{{url('/add-product')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path>
@@ -38,13 +44,13 @@
                             {{-- <div class="py-1 px-3 bg-gray-600 rounded text-gray-300 flex items-center justify-center text-xs">8</div> --}}
                         </li>
                         <li class="flex w-full justify-between text-black hover:text-fuchsia-500 cursor-pointer items-center mb-6">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                            <a href="{{url('/add-category')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <polyline points="8 16 10 10 16 8 14 14 8 16"></polyline>
                                     <circle cx="12" cy="12" r="9"></circle>
                                 </svg>
-                                <span class="text-sm ml-2">Performance</span>
+                                <span class="text-sm ml-2">Category</span>
                             </a>
                         </li>
                         <li class="flex w-full justify-between text-black hover:text-fuchsia-500 cursor-pointer items-center mb-6">
@@ -80,7 +86,8 @@
                             </a>
                         </li>
                         <li class="flex w-full justify-between text-black hover:text-fuchsia-500 cursor-pointer items-center">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                            {{-- this url does't work --}}
+                            <a href="{{url('/profile.edit')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"> 
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -164,13 +171,13 @@
                         </li>
                     </a>
                         <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                            <a href="" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <polyline points="8 16 10 10 16 8 14 14 8 16"></polyline>
                                     <circle cx="12" cy="12" r="9"></circle>
                                 </svg>
-                                <span class="text-sm ml-2">Performalkhhissssssssssssssssnce</span>
+                                <span class="text-sm ml-2">Performance</span>
                             </a>
                         </li>
                         <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
@@ -185,7 +192,7 @@
                             </a>
                         </li>
                         <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                            <a href="" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path>
@@ -280,3 +287,5 @@
         
     
 </div>
+
+@endsection

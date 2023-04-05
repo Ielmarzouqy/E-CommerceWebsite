@@ -40,6 +40,9 @@ Route::get('/side',function(){
 Route::get('/add-category',function(){
     return view('category.create');
 });
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
