@@ -33,6 +33,10 @@ Route::get('/add-product',function(){
     return view('products.create');
 });
 
+Route::get('/side',function(){
+    return view('layouts.sidebar');
+});
+
 Route::get('/add-category',function(){
     return view('category.create');
 });
