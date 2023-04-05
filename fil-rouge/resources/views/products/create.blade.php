@@ -1,69 +1,80 @@
-<div class="content">
-    <div class="container-fluid">
+<!-- component -->
+@extends('layouts.sidebar')
+@section('create')
 
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        Add Product
-
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <label>Product Category Name</label>
-                                <select name="product_category_id" class="form-control">
-                                    <option value="">-Select One-</option>
-                                    @foreach ($active_categories as $active_category)
-                                        <option value="{{ $active_category->id }}">{{ $active_category->category_name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Product Name</label>
-                                <input type="text" class="form-control" name="product_name">
-                            </div>
-                            <div class="form-group">
-                                <label>Product Price</label>
-                                <input type="text" class="form-control" name="product_price">
-                            </div>
-                            <div class="form-group">
-                                <label>Product Code</label>
-                                <input type="text" class="form-control" name="product_code">
-                            </div>
-                            <div class="form-group">
-                                <label>Product Quantity</label>
-                                <input type="text" class="form-control" name="product_quantity">
-                            </div>
-                            <div class="form-group">
-                                <label>Product Short Description</label>
-                                <textarea class="form-control" rows="2" name="product_short_description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Product Full Description</label>
-                                <textarea class="form-control" rows="4" name="product_long_description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Product Photo</label>
-                                <input type="file" class="form-control" name="product_photo">
-                            </div>
-                            {{-- <div class="form-group">
-                                <label>Product Thumbelinas Photo</label>
-                                <input type="file" class="form-control" name="product_thumbnail_photos[]" multiple>
-                            </div> --}}
-                            <div class="form-group">
-                                <label>Product Thumbelinas Photo</label>
-                                <input type="file" class="form-control" name="product_zoom_photos[]" multiple>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Add New Product</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<div class="flex items-center justify-center p-12">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="mx-auto w-full max-w-[550px]">
+      <form action="" method="POST">
+        <div class="mb-5">
+          <label
+            for="title"
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Title
+           </label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
         </div>
-        <!-- end row -->
-
-    </div> <!-- container -->
-
-</div>
+        <div class="mb-5">
+          <label
+            for=""
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Category
+          </label>
+          <input
+            type=""
+            name="category"
+            id="category"
+            placeholder=""
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label
+            for=""
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Price
+          </label>
+          <input
+            type="text"
+            name="Price"
+            id="Price"
+            placeholder="Enter your Price"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label
+            for="description"
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Description
+          </label>
+          <textarea
+            rows="4"
+            name="description"
+            id="description"
+            placeholder="Type your description"
+            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          ></textarea>
+        </div>
+        <div>
+          <button
+            class="hover:shadow-form rounded-md bg-[rgb(77,15,90)] py-3 px-8 text-base font-semibold text-white outline-none"
+          >
+            Add Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  @endsection
