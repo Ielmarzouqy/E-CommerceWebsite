@@ -23,6 +23,9 @@ Route::get('/sidebar', function () {
 Route::get('/shop', function () {
     return view('/shop');
 });
+Route::get('/contact', function(){
+return view('/contact-us');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
