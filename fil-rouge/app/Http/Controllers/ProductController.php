@@ -55,7 +55,9 @@ class ProductController extends Controller
     // dd();
     //   }
 
-      
+      $categories = Category::with('children')->whereNull('parent_id')->get();
+
+      return view('product.edit')->with($product)->with($categories);
 }
 
     /**
