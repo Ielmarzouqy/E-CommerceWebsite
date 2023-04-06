@@ -63,5 +63,24 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->withSuccess('You have successfully updated a Category!');
 }
 
+public function destroy(Category $category)
+{
+        if ($category->children) {
+            foreach ($category->children()->with('products')->get() as $child) {
+                foreach ($child->products as $product) {
+                    $product->update(['category_id' => NULL]);
+                }
+            }
+            
+            $category->children()->delete();
+        }
 
+        foreach ($category->products as $product) {
+            $product->update(['category_id' => NULL]);
+        }
+
+        $category->delete();
+
+        return redirect()->route('categories.index')->withSuccess('You have successfully deleted a Category!');
+}
 }
