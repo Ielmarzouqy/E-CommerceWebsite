@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('dashboard')
 @section('content-statistic')
 
 <!-- Remove class [ h-64 ] when adding a card block -->

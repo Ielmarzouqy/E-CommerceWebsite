@@ -2,8 +2,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- component -->
-@extends('../dashboard')
-@section('dash')
+
     
 
 <div class="w-full h-full">
@@ -217,7 +216,7 @@
                         </div>
                     </div>
                 </div>
-        
+               
                 {{-- <div class="px-8 border-t border-yellow-700">
                     <ul class="w-full flex items-center justify-between bg-gray-800">
                         <li class="cursor-pointer text-white pt-5 pb-3">
@@ -261,12 +260,16 @@
                 </div> --}}
             </div>
             <!-- Sidebar ends -->
-            @yield('content-statistic')
-            
-            @yield('create')
-            @yield('category')
+            </div>
+            <div>
+           
         </div>
-        {{-- <script>
+        @yield('dash')
+        
+    
+</div>
+
+  <script>
             var sideBar = document.getElementById("mobile-nav");
             var openSidebar = document.getElementById("openSideBar");
             var closeSidebar = document.getElementById("closeSideBar");
@@ -283,9 +286,4 @@
                     openSidebar.classList.remove("hidden");
                 }
             }
-        </script> --}}
-        
-    
-</div>
-
-@endsection
+        </script>

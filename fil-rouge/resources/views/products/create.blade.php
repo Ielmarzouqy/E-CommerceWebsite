@@ -1,5 +1,5 @@
 <!-- component -->
-@extends('layouts.sidebar')
+@extends('dashboard')
 @section('create')
 
 <div class="flex items-center justify-center p-12">
