@@ -11,6 +11,9 @@ type html>
 
       <!-- Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css
+      " rel="stylesheet">
+
 
       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
@@ -73,7 +76,7 @@ type html>
                 <h4 class="alert-heading">Success!</h4>
                 <p>{{ Session::get('success') }}</p>
 
-                <button type="button" class="close" data-dismiss="alert aria-label="Close">
+                <button type="button" class="close" data-dismiss="alert aria-label">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -232,5 +235,7 @@ type html>
             $('#editCategoryModal form input[name="name"]').val(name);
           });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js
+        "></script>
     </body>
 </html>

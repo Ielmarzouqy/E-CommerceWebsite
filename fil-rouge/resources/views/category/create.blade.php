@@ -6,7 +6,8 @@
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
     <div class="mx-auto w-full max-w-[550px]">
-      <form action="" method="POST">
+      <form action="{{ route('categories.store') }}" method="POST">
+        @csrf
         <div class="mb-5">
           <label
             for="name"
@@ -22,12 +23,15 @@
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
-        
-          <button
-            class="hover:shadow-form rounded-md bg-[rgb(89,149,26)] py-3 px-8 text-base font-semibold text-white outline-none"
+        <div class="hover:shadow-form rounded-md bg-green-500 py-3 px-8 text-base font-semibold text-black outline-none">
+          <button type="submit" class="hover:shadow-form rounded-md bg-green-500 py-3 px-8 text-base font-semibold text-black outline-none" 
+          >Create</button>
+        </div>
+          {{-- <button
+            class="hover:shadow-form rounded-md bg-[rgb(89,149,26)] py-3 px-8 text-base font-semibold text-white outline-none" 
           >
-            Add category
-          </button>
+            Add categorymkjnjn jinininuip jihbjkllllllllllllllllllln ,jkmibuhbbhuuhybhhbbhbhbhhbu
+          </button> --}}
         </div>
       </form>
     </div>

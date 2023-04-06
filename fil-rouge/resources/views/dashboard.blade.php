@@ -18,10 +18,10 @@
             </div>
         </div>
     </div> --}}
-    {{-- @yield('content-statistic')
+    @yield('content-statistic')
         
     @yield('create')
-    @yield('category') --}}
+    @yield('category')
     @extends('layouts.sidebar')
     @section('dash')
 </div>
