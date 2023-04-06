@@ -16,7 +16,7 @@ type html>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="{{ route('post.index') }}">{{ config('app.name') }}</a>
+          <a class="navbar-brand" href="{{ route('product.index') }}">{{ config('app.name') }}</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -25,11 +25,11 @@ type html>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                      <a class="nav-link" href="{{ route('post.index') }}">Home</a>
+                      <a class="nav-link" href="{{ route('product.index') }}">Home</a>
                   </li>
 
                   <li class="nav-item active">
-                      <a class="nav-link" href="{{ route('category.index') }}">Categories <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="{{ route('categories.index') }}">Categories <span class="sr-only">(current)</span></a>
                   </li>
               </ul>
 
@@ -43,7 +43,7 @@ type html>
                     </li>
                 @else
                     <li class="nav-item">
-                        <a href="{{ route('post.create') }}" class="btn btn-success my-2 my-sm-0">Create Post</a>
+                        <a href="{{ route('product.create') }}" class="btn btn-success my-2 my-sm-0">Create Post</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -145,7 +145,7 @@ type html>
                           <div class="button-group d-flex">
                             <button type="button" class="btn btn-sm btn-primary mr-1 edit-category" data-toggle="modal" data-target="#editCategoryModal" data-id="{{ $category->id }}" data-name="{{ $category->name }}">Edit</button>
 
-                            <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
 
@@ -164,7 +164,7 @@ type html>
                                   <div class="button-group d-flex">
                                     <button type="button" class="btn btn-sm btn-primary mr-1 edit-category" data-toggle="modal" data-target="#editCategoryModal" data-id="{{ $child->id }}" data-name="{{ $child->name }}">Edit</button>
 
-                                    <form action="{{ route('category.destroy', $child->id) }}" method="POST">
+                                    <form action="{{ route('categories.destroy', $child->id) }}" method="POST">
                                       @csrf
                                       @method('DELETE')
 
@@ -190,7 +190,7 @@ type html>
                 </div>
 
                 <div class="card-body">
-                  <form action="{{ route('category.store') }}" method="POST">
+                  <form action="{{ route('categories.store') }}" method="POST">
                     @csrf
 
                     <div class="form-group">
