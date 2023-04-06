@@ -52,7 +52,16 @@ class CategoryController extends Controller
         //
     }
 
-  
+    public function update(Request $request, Category $category)
+{
+        $validatedData = $this->validate($request, [
+            'name'  => 'required|min:3|max:255|string'
+        ]);
+
+        $category->update($validatedData);
+
+        return redirect()->route('categories.index')->withSuccess('You have successfully updated a Category!');
+}
 
 
 }
