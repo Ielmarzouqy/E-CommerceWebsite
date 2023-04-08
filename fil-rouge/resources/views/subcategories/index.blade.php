@@ -47,13 +47,13 @@
                   {{ $category->name }}
 
                   <div class="button-group d-flex">
-                    <button type="button" class="btn btn-sm btn-primary mr-1 edit-category" data-toggle="modal" data-target="#editCategoryModal" data-id="{{ $category->id }}" data-name="{{ $category->name }}">Edit</button>
+                    <button type="button" class="btn btn-info btn-xs edit-category" style="width: 76px;"data-toggle="modal" data-target="#editCategoryModal" data-id="{{ $category->id }}" data-name="{{ $category->name }}">Edit</button>
 
                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
                       @csrf
                       @method('DELETE')
 
-                      <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                      <button type="submit" class="btn btn-warning btn-xs" style="width: 76px;" >Delete</button>
                     </form>
                   </div>
                 </div>
@@ -74,11 +74,6 @@
 
                               <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
-
-                           
-
-
-
                           </div>
                         </div>
                       </li>
