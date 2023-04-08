@@ -72,8 +72,10 @@ class SubcateroryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+ public function destroy($id){
+            $delete = category::findOrFail($id);
+            $delete->delete();
+            return redirect()->route('subcategories.index');
+        }
+    
 }
