@@ -14,10 +14,13 @@ class SubcateroryController extends Controller
     {
         $categories = Category::with('children')->whereNull('parent_id')->get();
 
-        return view('subcategories.create')->with([
-          'categories'  => $categories
-        ]);
-        // return redirect()->back()->with('message', 'category created successfuly');
+        // return view('subcategories.create')->with([
+        //   'categories'  => $categories
+        // ]);
+        return view('subcategories.index')->with([
+            'message'=> 'category created successfuly',
+            'categories'  => $categories
+    ]);
     }
 
     /**

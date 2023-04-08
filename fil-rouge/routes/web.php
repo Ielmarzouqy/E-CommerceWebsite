@@ -21,9 +21,11 @@ use App\Http\Controllers\SubcateroryController;
 Route::resource('/categories', CategoryController::class);
 Route::resource('/subcategories', SubcateroryController::class);
 
+Route::get('/subcat', [SubcateroryController::class,'index']);
+
 Route::resource('/product', ProductController::class);
 
-Route::post('createSubCat',[CategoryController::class,'createSubCat'])->name('createSubCat');
+// Route::post('createSubCat',[CategoryController::class,'createSubCat'])->name('createSubCat');
 
 Route::get('/', function () {
     return view('welcome');
