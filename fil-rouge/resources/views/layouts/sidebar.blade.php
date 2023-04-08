@@ -53,14 +53,14 @@
                             </a>
                         </li>
                         <li class="flex w-full justify-between text-black hover:text-fuchsia-500 cursor-pointer items-center mb-6">
-                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                            <a href="{{url('subcategories')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
                                     <polyline points="7 8 3 12 7 16"></polyline>
                                     <polyline points="17 8 21 12 17 16"></polyline>
                                     <line x1="14" y1="4" x2="10" y2="20"></line>
                                 </svg>
-                                <span class="text-sm ml-2">Deliverables</span>
+                                <span class="text-sm ml-2">Sub-category</span>
                             </a>
                         </li>
                         <li class="flex w-full justify-between text-black hover:text-fuchsia-500 cursor-pointer items-center mb-6">
@@ -265,6 +265,7 @@
            
         </div>
         @yield('dash')
+</div>
         
     
 </div>

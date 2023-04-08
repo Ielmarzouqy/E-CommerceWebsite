@@ -26,19 +26,37 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-          $validatedData = $this->validate($request, [
-                'name'      => 'required|min:3|max:255|string',
-                'parent_id' => 'sometimes|nullable|numeric'
-          ]);
+
+        $category = new Category;
+        $category->name = $request->name;
+        $category->parent_id = null;
+
+        $category->save();
+        return redirect()->back()->with('message', 'category created successfuly');
+      
+        //   $validatedData = $this->($request);
+        //    [
+        //         'name'      => 'required|min:3|max:255|string',
+        //         'parent_id' => 'sometimes|nullable|numeric'
+        //   ]
+       
     
-          Category::create($validatedData);
+    //       Category::create($validatedData);
     
-          return redirect()->route('categories.index')->withSuccess('You have successfully created a Category!');
-    }
+    //       return redirect()->route('categories.index')->withSuccess('You have successfully created a Category!');
+     }
 
     /**
      * Display the specified resource.
      */
+    public function createSubCat($request){
+        $category = new Category;
+        $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+
+        $category->save();
+        return redirect()->back()->with('message', 'category created successfuly');
+    }
     public function show(string $id)
     {
         //

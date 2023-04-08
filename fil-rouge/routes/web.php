@@ -1,10 +1,11 @@
 <?php
 
-use  App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use  App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-use App\Models\Product;
+use App\Http\Controllers\SubcateroryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,11 @@ use App\Models\Product;
 */
 
 Route::resource('/categories', CategoryController::class);
+Route::resource('/subcategories', SubcateroryController::class);
+
 Route::resource('/product', ProductController::class);
 
+Route::post('createSubCat',[CategoryController::class,'createSubCat'])->name('createSubCat');
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,6 +47,8 @@ Route::get('/add-product',function(){
 Route::get('/side',function(){
     return view('layouts.sidebar');
 });
+
+
 
 Route::get('/add-category',function(){
     return view('category.create');
