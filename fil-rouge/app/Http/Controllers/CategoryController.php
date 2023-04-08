@@ -70,17 +70,7 @@ class CategoryController extends Controller
         //
     }
 
-    public function update(Request $request, Category $category)
-{
-        $validatedData = $this->validate($request, [
-            'name'  => 'required|min:3|max:255|string'
-        ]);
-
-        $category->update($validatedData);
-
-        return redirect()->route('categories.index')->withSuccess('You have successfully updated a Category!');
-}
-
+   
 public function destroy(Category $category)
 {
         if ($category->children) {
@@ -99,6 +89,6 @@ public function destroy(Category $category)
 
         $category->delete();
 
-        return redirect()->route('categories.index')->withSuccess('You have successfully deleted a Category!');
+        return redirect()->route('subcategories.index')->withSuccess('You have successfully deleted a Category!');
 }
 }
