@@ -98,12 +98,12 @@
 
   .cnt{
     margin-left: 25%;
-    background-color: aqua
+    background-color: rgb(234, 174, 244)
   }
 </style>
   <div class="wrapper cnt">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-12 col-sm-12">
         <ul class="breadcrumb panel">
           <li><a href="dashboard.php"><i class="fa fa-home"></i> Home</a></li>
           <li><a href="dashboard.php">Dashboard</a></li>
@@ -218,76 +218,6 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label col-md-2"> Product Master Preview </label>
-                <div class="col-md-9">
-                  <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <div class="fileupload-new thumbnail" style="width: 160px; height: 160px;">
-                      <img style="height: 100%; width: 100%;" alt="" id="div7"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!--=*= PRODUCT ADDITIONAL IMAGE =*=-->
-              <div class="d-flex d-inline">
-                <div class="form-group">
-                  <label class="control-label col-md-2 "> Product Additional Image </label>
-                  <div class="controls col-md-3">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <span class="btn btn-default btn-file">
-                        <input type="file" name="products_image_one" class="default" onchange="readURL(this);" set-to="div8"/>
-                      </span>
-                      <span class="fileupload-preview" style="margin-left:5px;"></span>
-                      <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
-                    </div>
-                  </div>
-                  <div class="controls col-md-3">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <span class="btn btn-default btn-file">
-                        <input type="file" name="products_image_two" class="default" onchange="readURL(this);" set-to="div9"/>
-                      </span>
-                      <span class="fileupload-preview" style="margin-left:5px;"></span>
-                      <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
-                    </div>
-                  </div>
-                  <div class="controls col-md-3">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <span class="btn btn-default btn-file">
-                        <input type="file" name="products_image_three" class="default" onchange="readURL(this);" set-to="div10"/>
-                      </span>
-                      <span class="fileupload-preview" style="margin-left:5px;"></span>
-                      <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-md-2"> Product Additional Preview </label>
-                  <div class="col-md-3">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <div class="fileupload-new thumbnail" style="width: 160px; height: 160px;">
-                        <img style="height: 100%; width: 100%;" alt="" id="div8"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <div class="fileupload-new thumbnail" style="width: 160px; height: 160px;">
-                        <img style="height: 100%; width: 100%;" alt="" id="div9"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <div class="fileupload-new thumbnail" style="width: 160px; height: 160px;">
-                        <img style="height: 100%; width: 100%;" alt="" id="div10"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--=*= PRODUCT ADDITIONAL IMAGE =*=-->
-              
               <div class="form-group">
                 <label for="ProductName" class="col-lg-2 col-sm-2 control-label"> Product Tags </label>
                 <div class="col-md-7">

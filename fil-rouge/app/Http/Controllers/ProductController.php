@@ -21,8 +21,10 @@ class ProductController extends Controller
     public function create()
     {
           $categories = Category::with('children')->whereNull('parent_id')->get();
+        //   $sub_categories = Category::whereNotNull('parent_id')->get();
     
-          return view('product.create')->with($categories);
+          return view('product.create')->with([ 'categories'=>$categories]);
+        // return $categories;
     }
 
     public function store(Request $request)

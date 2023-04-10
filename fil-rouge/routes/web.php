@@ -25,6 +25,9 @@ Route::get('/subcat', [SubcateroryController::class,'index']);
 
 Route::resource('/product', ProductController::class);
 
+Route::get('/pro1', function(){
+    return view('product.create');
+});
 // Route::post('createSubCat',[CategoryController::class,'createSubCat'])->name('createSubCat');
 
 Route::get('/', function () {
