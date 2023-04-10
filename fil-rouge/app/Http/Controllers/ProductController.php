@@ -31,16 +31,21 @@ class ProductController extends Controller
     {
         $validatedData = $this->validate($request, [
             'title'         => 'required|min:3|max:255',
-            'slug'          => 'required|min:3|max:255|unique:posts',
-            'image'         => 'sometimes|image',
-            'category_id'   => 'required|numeric',
-            'description'   => 'required|min:3'
+            'slug'          => 'required|min:3|max:255',
+            'description'   => 'required|min:3',
+            'cover'         => 'required',
+            'price'         => 'required',
+
+            'category_id'   => 'required',
+            
         ]);
     
         $validatedData['user_id'] = Auth::id();
         $validatedData['slug'] = Str::slug($validatedData['slug'], '-');
     
-        $product = Product::create($validatedData);
+        $product = Product::create($request->all());
+        // $product->save();
+        return view('categories');
     }
     /**
      * Display the specified resource.
