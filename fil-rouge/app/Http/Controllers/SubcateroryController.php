@@ -28,7 +28,10 @@ class SubcateroryController extends Controller
      */
     public function create()
     {
-        //
+        return view('subcategories.create',[
+            'categories'=>self::index()->categories
+        ]);
+
     }
 
     /**
@@ -38,7 +41,7 @@ class SubcateroryController extends Controller
     {
         $subcategory = new Category;
         $subcategory->name = $request->name;
-        $subcategory->parent_id = $request->parent_id;
+        $subcategory->parent_id = $request->id;
 
         $subcategory->save();
         return redirect()->back()->with('message', 'sub-category created successfuly');
