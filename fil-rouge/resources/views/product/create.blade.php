@@ -78,9 +78,14 @@
                   <div class="col-lg-7">
                     <select name="subcategory_id" id="subcategory_id" class="form-control" required>
                       <option value="">Select a Subcategory</option>
-                      @foreach ($category->children as $child)
-                      <option value="{{ $child->id }}" {{ $child->id === old('category_id') ? 'selected' : '' }}>{{ $child->name }}</option>
-                  @endforeach
+                        
+                            @foreach ($sub_categories as $child)
+                            {{-- @if ($category->id = $category->parent_id) --}}
+                                <option value="{{ $child->id }}" >{{ $child->name }}</option>
+                                {{-- @endif  --}}
+                            @endforeach
+                        
+
                     </select>
                   </div>
                 </div>
