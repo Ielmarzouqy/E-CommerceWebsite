@@ -37,9 +37,7 @@ Route::get('/', function () {
 Route::get('/statistic', function () {
     return view('statistic');
 });
-Route::get('/shop', function () {
-    return view('/shop');
-});
+Route::get('/shop',[ProductsController::class, 'index']);
 Route::get('/contact', function(){
 return view('/contact-us');
 });

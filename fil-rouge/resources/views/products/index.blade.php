@@ -152,22 +152,26 @@
 
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
 
-            @foreach ($products as $product)
+            {{-- @foreach ($products as $product)
             <div class="product w-full">
-                {{-- <p>{{ $product->description }}</p> --}}
                 <img src="{{ asset('images/' . $product->cover) }}" alt="{{ $product->title }}" class="w-full h-64 bg-gray-300 rounded-lg ">
                 <h2 class="w-56 h-2 mt-4  rounded-lg">{{ $product->title }}</h2>
-
                 <p class="w-24 h-2 mt-4 rounded-lg">Price: {{ $product->price }}</p>
             </div>
-        @endforeach
-            {{-- <div class="w-full ">
-                <img src="./asset/images/f1.jpg" alt="" class="w-full h-64 bg-gray-300 rounded-lg ">
-                
-                
-                <h1 class="w-56 h-2 mt-4  rounded-lg ">Flower</h1>
-                <p class="w-24 h-2 mt-4 rounded-lg ">  </p>
-            </div>             --}}
+        @endforeach --}}
+
+        @foreach ($productsByCategory as $category => $products)
+    <h2>{{ $category }}</h2>
+    @foreach ($products as $product)
+        <div class="product w-full">
+            {{-- <p>{{ $product->description }}</p> --}}
+            <img src="{{ asset('images/' . $product->cover) }}" alt="{{ $product->title }}" class="w-full h-64 bg-gray-300 rounded-lg ">
+            <h3 class="w-56 h-2 mt-4  rounded-lg">{{ $product->title }}</h3>
+
+            <p class="w-24 h-2 mt-4 rounded-lg">Price: {{ $product->price }}</p>
+        </div>
+    @endforeach
+@endforeach
         </div>
     </div>
 </section>

@@ -16,11 +16,20 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // return view('products.index');
+        $productsByCategory = Product::join('categories', 'products.sub_category', '=', 'categories.id')
+        ->orderBy('categories.name')
+        ->select('products.*', 'categories.name as category_name')
+        ->get()
+        ->groupBy('category_name');
 
-         $products = Product::all();
 
-    return view('products.index')->with(['products' => $products]);
+        //  $products = Product::all();
+        // return view('products.index', compact('productsByCategory'));
+        return view('/shop', compact('productsByCategory'));
+
+
+
+    // return view('/shop')->with(['products' => $productsByCategory]);
     }
     public function create()
     {
