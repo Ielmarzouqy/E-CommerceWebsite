@@ -19,7 +19,7 @@
          <script src="https://cdn.tailwindcss.com"></script>
 
     </head>
-    <body class="antialiased bg-orange-100">
+    <body class="antialiased bg-violet-100">
         <div class="relative  sm:justify-center sm:items-center min-h-screen  bg-center  dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
                 <div dir="rtl" class="  sm:top-0 sm:right-0 p-6 text-right">
@@ -39,8 +39,9 @@
                             @endif
                         @endauth
                         <div class="flex justify-center m-4 ">
-                            <img src="./asset/images/logo3.png" class="w-40 " alt="logo">
+                            <img src="./asset/images/logov.png" class="w-40 " alt="logo">
                         </div>
+                        
                 </div>
             @endif
             {{-- image for slide --}}
@@ -82,10 +83,36 @@
     <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
 
     <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
-        <img src="./asset/images/phone1.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <img src="./asset/images/phone1.jpg" class="w-64 hover: rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <div>
+          <h1 class="text-center text-violet-700 text-2xl">title</h1>
+          <p class="font-bold text-center text-xl">20$</p>
+        <button class="rounded-full mx-end bg-violet-400 w-24 h-8 text-white hover:bg-violet-700">add to card</button>
+
+        </div>
+    
         <img src="./asset/images/phone2.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <div>
+          <h1 class="t">title</h1>
+          <p>20$</p>
+        <button>add to card</button>
+
+        </div>
+        
         <img src="./asset/images/phone3.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2"alt="">
+        <div>
+          <h1>title</h1>
+          <p>20$</p>
+          <button>add to card</button>
+
+        </div>
         <img src="./asset/images/phone4.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+        <div>
+          <h1>title</h1>
+          <p>20$</p>
+        <button>add to card</button>
+
+        </div>
     </div>
     <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
 
@@ -99,6 +126,7 @@
 
     <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
         <img src="./asset/images/e1.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
+
         <img src="./asset/images/e2.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
         <img src="./asset/images/e3.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
         <img src="./asset/images/e4.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
