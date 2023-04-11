@@ -1,4 +1,4 @@
-
+{{-- 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -12,7 +12,7 @@
           }
         }
       </script>
-      
+
 <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
     <span class="sr-only">Open sidebar</span>
     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -138,4 +138,37 @@
        </div>
     </div>
  </div>
- 
+  --}}
+  <!-- component -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<section class="bg-white ">
+    <div class="container px-6 py-10 mx-auto animate-pulse">
+        <h1 class="w-48 h-2 mx-auto bg-gray-200 rounded-lg "></h1>
+
+        <p class="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg "></p>
+        <p class="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg sm:w-80 "></p>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
+
+            @foreach ($products as $product)
+            <div class="product w-full">
+                {{-- <p>{{ $product->description }}</p> --}}
+                <img src="{{ asset('images/' . $product->cover) }}" alt="{{ $product->title }}" class="w-full h-64 bg-gray-300 rounded-lg ">
+                <h2 class="w-56 h-2 mt-4  rounded-lg">{{ $product->title }}</h2>
+
+                <p class="w-24 h-2 mt-4 rounded-lg">Price: {{ $product->price }}</p>
+            </div>
+        @endforeach
+            {{-- <div class="w-full ">
+                <img src="./asset/images/f1.jpg" alt="" class="w-full h-64 bg-gray-300 rounded-lg ">
+                
+                
+                <h1 class="w-56 h-2 mt-4  rounded-lg ">Flower</h1>
+                <p class="w-24 h-2 mt-4 rounded-lg ">  </p>
+            </div>             --}}
+        </div>
+    </div>
+</section>
+

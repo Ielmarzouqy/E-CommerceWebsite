@@ -37,7 +37,7 @@
                 <h1 class="w-56 h-2 mt-4 bg-gray-200 rounded-lg "></h1>
                 <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg "></p>
             </div>
-          
+            
         </div>
     </div>
 </section>
