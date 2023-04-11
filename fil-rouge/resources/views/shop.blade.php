@@ -13,9 +13,10 @@
   
            
         </div>
+        @foreach ($productsByCategory as $category => $products)
+
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
 
-        @foreach ($productsByCategory as $category => $products)
         @foreach ($products as $product)
 
     <div class="category">
@@ -31,9 +32,9 @@
     </div>
     @endforeach
 
-@endforeach
 </div>
 
+@endforeach
 
       </div>
   </section>
