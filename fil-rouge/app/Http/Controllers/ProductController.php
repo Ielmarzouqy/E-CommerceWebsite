@@ -29,7 +29,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $this->validate($request, [
+        $data=$this->validate($request, [
             'title'         => 'required|min:3|max:255',
             'slug'          => 'required|min:3|max:255',
             'description'   => 'required|min:3',
@@ -39,13 +39,20 @@ class ProductController extends Controller
             'category_id'   => 'required',
             
         ]);
+        // $product = new Product;
+        // $product->title =   $request->input('title');
+        // $product->slug =   $request->input('slug');
+        // $product->description =   $request->input('description');
+        // $product->cover =   $request->input('cover');
+        // $product->price =   $request->input('price');
+        // $product->category();
+
+        $data['user_id'] = Auth::id();
+        $data['slug'] = Str::slug($data['slug'], '-');
     
-        $validatedData['user_id'] = Auth::id();
-        $validatedData['slug'] = Str::slug($validatedData['slug'], '-');
-    
-        $product = Product::create($request->all());
-        // $product->save();
-        return view('categories');
+        // $product = Product::create($validatedData);
+        $product= Product::create($data);
+        return redirect()->route('product.index');;
     }
     /**
      * Display the specified resource.

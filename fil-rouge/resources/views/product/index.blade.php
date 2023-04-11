@@ -1,4 +1,4 @@
-<div class="row">
+{{-- <div class="row">
     @foreach($products as $product)
         <div class="col-md-4 mt-4">
             <div class="card">
@@ -13,4 +13,7 @@
             </div>
         </div>
     @endforeach
-</div>
+</div> --}}
+
+
+pro index

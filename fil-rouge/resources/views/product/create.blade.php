@@ -55,17 +55,17 @@
                         </div>'; --}}
               
             <form class="form-horizontal" method="post" action="{{route('product.store')}}" enctype="multipart/form-data">
-                {{-- @csrf --}}
+                @csrf
                 <div class="form-group">
                     <label for="ProductName" class="col-lg-2 col-sm-2 control-label"> Product Name </label>
                     <div class="col-lg-7">
-                      <input type="text" name="product_name" class="form-control" id="product_name" required>
+                      <input type="text" name="title" class="form-control" id="product_name" required>
                     </div>
                   </div>
                 <div class="form-group ">
                   <label for="ProductStatus" class="control-label col-lg-2">Category</label>
                     <div class="col-lg-7">
-                        <select class="form-control" name="category_id" required>
+                        <select class="form-control" name="category_id" >
                             <option value="">Select a Category</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}" >{{ $category->name }}</option>
@@ -77,7 +77,7 @@
                 <div class="form-group ">
                   <label for="ProductStatus" class="control-label col-lg-2"> Subcategory </label>
                   <div class="col-lg-7">
-                        <select name="subcategory_id" id="subcategory_id" class="form-control" required>
+                        <select name="subcategory_id" id="subcategory_id" class="form-control" >
                         <option value="">Select a Subcategory</option>
                             @foreach ($categories as $category)
                                 {{-- @if ($category->children) --}}
