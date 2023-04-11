@@ -16,11 +16,17 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $productsByCategory = Product::join('categories', 'products.sub_category', '=', 'categories.id')
+        $productsByCategory = Product::leftJoin('categories', 'products.sub_category', '=', 'categories.id')
         ->orderBy('categories.name')
         ->select('products.*', 'categories.name as category_name')
         ->get()
         ->groupBy('category_name');
+
+        // Product::leftjoin('categories', 'products.sub_category', '=', 'categories.id')
+        // ->orderBy('categories.name')
+        // ->select('products.*', 'categories.name as category_name')
+        // ->get()
+        // ->groupBy('category_name');
 
 
         //  $products = Product::all();

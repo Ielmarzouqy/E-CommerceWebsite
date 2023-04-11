@@ -205,7 +205,6 @@
           @endforeach --}}
   
           @foreach ($productsByCategory as $category => $products)
-      <h2>{{ $category }}</h2>
       @foreach ($products as $product)
           <div class="product w-full">
               {{-- <p>{{ $product->description }}</p> --}}
