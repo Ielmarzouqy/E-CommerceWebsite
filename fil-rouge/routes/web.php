@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use  App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SubcateroryController;
 
 /*
@@ -23,10 +24,10 @@ Route::resource('/subcategories', SubcateroryController::class);
 
 Route::get('/subcat', [SubcateroryController::class,'index']);
 
-Route::resource('/product', ProductController::class);
+Route::resource('/products', ProductsController::class);
 
 Route::get('/pro1', function(){
-    return view('product.create');
+    return view('products.create');
 });
 // Route::post('createSubCat',[CategoryController::class,'createSubCat'])->name('createSubCat');
 

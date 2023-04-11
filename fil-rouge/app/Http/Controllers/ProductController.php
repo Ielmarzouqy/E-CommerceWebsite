@@ -23,7 +23,7 @@ class ProductController extends Controller
           $categories = Category::with('children')->whereNull('parent_id')->get();
           $sub_categories = Category::whereNotNull('parent_id')->get();
     
-          return view('product.create')->with([ 'categories'=>$categories,'sub_categories'=>$sub_categories]);
+          return view('products.create')->with([ 'categories'=>$categories,'sub_categories'=>$sub_categories]);
         // return $categories;
     }
 
@@ -54,7 +54,9 @@ class ProductController extends Controller
     
         // $product = Product::create($validatedData);
         $product= Product::create($data);
-        return redirect()->route('product.index');;
+        // return redirect()->route('products.index');;
+        return redirect()->back()->with('message', 'category created successfuly');
+
     }
     /**
      * Display the specified resource.

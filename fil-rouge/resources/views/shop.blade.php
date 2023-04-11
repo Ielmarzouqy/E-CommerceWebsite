@@ -31,6 +31,12 @@
                 <h1 class="w-56 h-2 mt-4 bg-gray-200 rounded-lg "></h1>
                 <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg "></p>
             </div>
+            <div class="w-full ">
+                <img src="./asset/images/f3.jpg"  alt="" class="w-full h-64 bg-gray-300 rounded-lg ">
+                
+                <h1 class="w-56 h-2 mt-4 bg-gray-200 rounded-lg "></h1>
+                <p class="w-24 h-2 mt-4 bg-gray-200 rounded-lg "></p>
+            </div>
           
         </div>
     </div>
