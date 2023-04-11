@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('price');
             $table->unsignedBigInteger('user_id');
             $table->integer('category_id')->unsigned()->nullable();
+            $table->integer('sub_category')->unsigned()->nullable();
   
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');

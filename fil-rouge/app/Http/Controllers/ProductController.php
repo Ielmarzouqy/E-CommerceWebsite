@@ -37,6 +37,8 @@ class ProductController extends Controller
             'price'         => 'required',
 
             'category_id'   => 'required',
+            'sub_category'   => 'required',
+
             
         ]);
         // $product = new Product;

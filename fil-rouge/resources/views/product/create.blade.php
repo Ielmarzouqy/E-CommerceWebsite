@@ -77,7 +77,7 @@
                 <div class="form-group ">
                   <label for="ProductStatus" class="control-label col-lg-2"> Subcategory </label>
                   <div class="col-lg-7">
-                        <select name="subcategory_id" id="subcategory_id" class="form-control" >
+                        <select name="sub_category" id="subcategory_id" class="form-control" >
                         <option value="">Select a Subcategory</option>
                             @foreach ($categories as $category)
                                 {{-- @if ($category->children) --}}
