@@ -19,9 +19,15 @@ class CartController extends Controller
         $producut = Product::findOrFail($id);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+   
+    public function AddToCart()
+    {
+        $userid = Auth::id();
+        $cart_items = Cart::where('user_id',$userid)->get();
+        return view('cart.show-single-product', compact('cart_items'));
+    }
+
+
     public function addProductToCart(Request $request)
     {
         $product_price = $request->price;
@@ -39,11 +45,7 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
+   
     /**
      * Display the specified resource.
      */

@@ -20,13 +20,13 @@ use App\Http\Controllers\SubcateroryController;
 |
 */
 // Route::get('addtocart', [ CartController::class,'addProductToCart']);
-Route::controller(CartController::class)->group(function(){
-    route::post('addtocart','addProductToCart');
-});
-// Route::get('addtocart', function(){
-//     return view('cart.show-single-product');
-//     // return 'adddcarrt';
+// Route::controller(CartController::class)->group(function(){
+//     route::post('addtocart','addProductToCart');
 // });
+Route::get('addtocart',[CartController::class,'AddToCart'] 
+    // return view('cart.show-single-product');
+    // return 'adddcarrt';
+);
 
 
 Route::get('side', function(){
