@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'slug', 'description', 'cover','price','user_id', 'category_id','sub_category'];
+    protected $fillable = ['title', 'slug', 'description', 'cover','price','user_id', 'category_id','sub_category','quantity'];
 
     public function getRouteKeyName()
     {

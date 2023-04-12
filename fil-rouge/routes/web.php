@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -18,6 +19,15 @@ use App\Http\Controllers\SubcateroryController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route::get('addtocart', [ CartController::class,'addProductToCart']);
+Route::controller(CartController::class)->group(function(){
+    route::post('addtocart','addProductToCart');
+});
+// Route::get('addtocart', function(){
+//     return view('cart.show-single-product');
+//     // return 'adddcarrt';
+// });
+
 
 Route::get('side', function(){
     return view('layouts.side');

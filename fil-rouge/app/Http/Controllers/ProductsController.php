@@ -57,6 +57,8 @@ class ProductsController extends Controller
 
             'category_id'   => 'required',
             'sub_category'   => 'required',
+            'quantity'   => 'required',
+
 
             
         ]);
@@ -84,6 +86,15 @@ class ProductsController extends Controller
     {
         return view('products.show',[
             'product'=> Product::findOrFail($id),
+        ]);
+    }
+    public function singlePageProduct(string $id)
+    {
+        $pro = Product::findOrFail($id);
+        // $cat =Categroy::findOrFail($id)
+        return view('products.show',[
+            'product'=> $pro,
+            // 'category'=>$cat,
         ]);
     // });
     }

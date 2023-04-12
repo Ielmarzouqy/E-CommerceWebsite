@@ -19,6 +19,8 @@ return new class extends Migration
             
             $table->string('cover');
             $table->decimal('price');
+            $table->integer('quantity');
+
             $table->unsignedBigInteger('user_id');
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('sub_category')->unsigned()->nullable();

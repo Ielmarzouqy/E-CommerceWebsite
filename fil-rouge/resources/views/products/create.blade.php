@@ -128,6 +128,12 @@
                           <input type="tags" name="cover" id="tag-input1" required>
                         </div>
                       </div>		 --}}
+                      <div class="form-group">
+                        <label for="ProductPrice" class="col-lg-2 col-sm-2 control-label"> Product Price </label>
+                        <div class="col-lg-7">
+                          <input type="number" step="any" name="quantity" class="form-control" id="product_price" required>
+                        </div>
+                      </div>
                     
                     <div class="form-group">
                       <label class="control-label col-md-2 "> Product Master Image </label>
