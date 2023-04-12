@@ -82,7 +82,10 @@ class ProductsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('products.show',[
+            'product'=> Product::findOrFail($id),
+        ]);
+    // });
     }
 
     public function edit(Product $product)

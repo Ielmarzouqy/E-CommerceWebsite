@@ -20,14 +20,18 @@
         @foreach ($products as $product)
 
     <div class="category">
-        <h2>{{ $category }}</h2>
+        {{-- <h2>{{ $category }}</h2> --}}
 
-            <div class="product w-full">
+            <div class="product p-4 w-full">
                 {{-- <p>{{ $product->description }}</p> --}}
                 <img src="{{ asset('images/' . $product->cover) }}" alt="{{ $product->title }}" class="w-full h-64 bg-gray-300 rounded-lg ">
-                <h3 class="w-56 h-2 mt-4  rounded-lg">{{ $product->title }}</h3>
+                <h3 class="w-56 h-2 mt-4 font-bold rounded-lg">{{ $product->title }}</h3>
 
                 <p class="w-24 h-2 mt-4 rounded-lg">Price: {{ $product->price }}</p>
+                <a href="{{route('products.show',['product'=>$product['id']])}}" >
+                <button class="btn my-8 w-24 h-8 rounded-lg text-white bg-fuchsia-600">see more</button>
+                </a>
+               
             </div>
     </div>
     @endforeach

@@ -23,10 +23,10 @@
     
         .cnt{
           margin-left: 25%;
-          background-color: rgb(132, 71, 142)
+          background-color: rgb(244, 209, 249)
         }
       </style>
-        <div class="wrapper cnt">
+        <div class="wrapper p-4 cnt">
           <div class="row">
             <div class="col-lg-12 col-sm-12">
               <ul class="breadcrumb panel">

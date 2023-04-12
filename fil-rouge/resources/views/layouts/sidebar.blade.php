@@ -9,7 +9,7 @@
             <!-- Sidebar starts -->
             <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
             
-            <div style="min-height: 716px" class="w-64 absolute sm:relative bg-orange-100 shadow md:h-full flex-col justify-between  sm:flex">
+            <div style="min-height: 716px" class="w-64 absolute sm:relative bg-violet-300 shadow md:h-full flex-col justify-between  sm:flex">
                 <div class="px-8">
                     <a href="{{ url('/')}}">
                         <div class="h-16 w-full flex items-center">
