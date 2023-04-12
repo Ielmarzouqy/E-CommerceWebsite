@@ -1,6 +1,6 @@
 
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
   <section class="bg-white ">
       <div class="container px-6 py-10 mx-auto animate-pulse">
