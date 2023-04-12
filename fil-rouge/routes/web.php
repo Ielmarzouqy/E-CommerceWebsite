@@ -19,6 +19,10 @@ use App\Http\Controllers\SubcateroryController;
 |
 */
 
+Route::get('side', function(){
+    return view('layouts.side');
+});
+
 Route::resource('/categories', CategoryController::class);
 Route::resource('/subcategories', SubcateroryController::class);
 
@@ -48,9 +52,9 @@ Route::get('/add-product',function(){
     return view('products.create');
 });
 
-Route::get('/side',function(){
-    return view('layouts.sidebar');
-});
+// Route::get('/side',function(){
+//     return view('layouts.sidebar');
+// });
 
 
 
