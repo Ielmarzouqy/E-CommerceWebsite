@@ -23,15 +23,17 @@ use App\Http\Controllers\SubcateroryController;
 Route::controller(CartController::class)->group(function(){
 Route::get('remove_cart_item{id}','RemoveCartItem')->name('removeitem');
 
-    // route::post('addtocart','addProductToCart');
+    route::get('addtocart','addToCart')->name('addtocart');
+    route::post('addtocart','addProductToCart')->name('addproducttocart');
+
 });
 
 // Route::get('remove{id}',[CartController::class,'removeCartItem'] 
 // );
-Route::get('addtocart',[CartController::class,'AddToCart'] 
+// Route::get('addtocart',[CartController::class,'addProductToCart'] 
     // return view('cart.show-single-product');
     // return 'adddcarrt';
-);
+// );
 
 Route::get('side', function(){
     return view('layouts.side');

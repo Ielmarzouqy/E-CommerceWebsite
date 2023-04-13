@@ -30,16 +30,18 @@ class CartController extends Controller
 
     public function addProductToCart(Request $request)
     {
+        echo 'add product to cart function';
         $product_price = $request->price;
         $quantity = $request->quentity;
         $price = $product_price * $quantity;
+        // dd($request);
         Cart::insert([
         'product_id'=>$request->product_id,
         'user_id'=> Auth::id(),
         'quentity'=>$request->quentity,
         'price'=>$price,
         ]);
-        return view('cart.show-single-product')->with('message','your pro added successfuly');
+        return redirect()->route('addtocart')->with('message','your pro added successfuly');
     }
 
     /**
