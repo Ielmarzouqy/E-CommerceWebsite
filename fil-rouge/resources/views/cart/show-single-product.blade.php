@@ -34,14 +34,26 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     @foreach ($cart_items as $item)
                         
                   
-                    <tr>
+                    <tr>    
                         @php
-                            $pro_name = App\Models\Product::Where('id',$item->product_id)->get()
-                        @endphp
-                        <td>{{$item->product_id}}</td>
+                            $pro_name = App\Models\Product::Where('id',$item->product_id)->get()->value('title');
+                            $cover = App\Models\Product::Where('id',$item->product_id)->get()->value('cover');
+
+                         @endphp
+                    
+                    <td><img src="{{ asset('images/' . $cover) }}" alt="{{ $pro_name }}" class="w-40 h-40 bg-gray-300 rounded-lg "></td>
+               
+                        <td>{{$pro_name}}</td>
+
                         <td>{{$item->price}}</td>
                         <td>{{$item->quantity}}</td>
-                        <td><a href="" class="btn btn-error" >remove</a>
+                        
+                        <td>
+                            {{-- <form action="{ route('removeitem', $item->product_id) }}" method="post">
+                                @csrf
+                                @method('DELETE') --}}
+                                <a href="{{route('removeitem', $item->id)}}" class="btn btn-error"  >remove</a>
+                            {{-- </form> --}}
                         </td>
 
                                                                               
