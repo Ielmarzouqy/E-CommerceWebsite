@@ -35,6 +35,9 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                         
                   
                     <tr>
+                        @php
+                            $pro_name = App\Models\Product::Where('id',$item->product_id)->get()
+                        @endphp
                         <td>{{$item->product_id}}</td>
                         <td>{{$item->price}}</td>
                         <td>{{$item->quantity}}</td>

@@ -9,10 +9,9 @@
           <p class="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg "></p>
           <p class="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg sm:w-80 "></p>
   
-          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
+          {{-- <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4"> --}}
   
            
-        </div>
         @foreach ($productsByCategory as $category => $products)
 
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
@@ -20,7 +19,7 @@
         @foreach ($products as $product)
 
     <div class="category">
-        {{-- <h2>{{ $category }}</h2> --}}
+        <h2>{{ $category }}</h2>
 
             <div class="product p-4 w-full">
                 {{-- <p>{{ $product->description }}</p> --}}
@@ -36,11 +35,13 @@
     </div>
     @endforeach
 
+{{-- </div> --}}
 </div>
 
 @endforeach
 
-      </div>
+    </div>
+
   </section>
   
   
