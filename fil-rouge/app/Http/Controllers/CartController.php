@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\ShippingInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Auth;
@@ -44,29 +45,33 @@ class CartController extends Controller
         return redirect()->route('addtocart')->with('message','your pro added successfuly');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-   
-    /**
-     * Display the specified resource.
-     */
-    public function show(Cart $cart)
+    public function GetShippingAdress()
     {
-        //
+        return view('cart.shippinginfo');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cart $cart)
+    public function AddShippingInfo(Request $request)
     {
-        //
+        echo 'hi';
+        ShippingInfo::insert([
+            'user_id'=>Auth::id(),
+           
+            'first_name'=> $request->first_name,
+            'last_name'=> $request->last_name,
+            'phone_number'=> $request->phone_number,
+            'email'=> $request->email,
+            'city_name'=> $request->city_name,
+            'adress'=> $request->adress,
+         
+            'postal_code'=> $request->postal_code
+        ]);
+        return redirect()->back()->with('message','added info');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Cart $cart)
     {
         //

@@ -25,6 +25,11 @@ Route::get('remove_cart_item{id}','RemoveCartItem')->name('removeitem');
 
     route::get('addtocart','addToCart')->name('addtocart');
     route::post('addtocart','addProductToCart')->name('addproducttocart');
+    route::post('shipping','AddShippingInfo')->name('shipping');
+
+    route::get('/checkout','checkout')->name('chackout');
+    route::get('/shipping_adress','GetShippingAdress')->name('shippinginfo');
+
 
 });
 

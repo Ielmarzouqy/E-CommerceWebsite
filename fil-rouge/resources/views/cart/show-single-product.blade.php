@@ -62,7 +62,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                         <td>{{$total}}</td>
                        
 
-                        <td><a href="" class="btn btn-primary">checkout now</a></td>
+                        <td><a href="{{ route('shippinginfo')}}" class="btn btn-primary">checkout now</a></td>
                      
                     </tr>
                     @endif
