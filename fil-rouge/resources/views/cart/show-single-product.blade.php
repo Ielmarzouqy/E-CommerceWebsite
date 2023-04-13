@@ -27,36 +27,43 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                         <th>Type</th>
                         <th>Where</th>
                         <th>Description</th>
+                        <th>Description</th>
+
                         
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $total = 0;
+                    @endphp
                     @foreach ($cart_items as $item)
-                        
-                  
-                    <tr>    
-                        @php
-                            $pro_name = App\Models\Product::Where('id',$item->product_id)->get()->value('title');
-                            $cover = App\Models\Product::Where('id',$item->product_id)->get()->value('cover');
+                        <tr>    
+                            @php
+                                $pro_name = App\Models\Product::Where('id',$item->product_id)->get()->value('title');
+                                $cover = App\Models\Product::Where('id',$item->product_id)->get()->value('cover');
 
-                         @endphp
+                            @endphp
                     
-                    <td><img src="{{ asset('images/' . $cover) }}" alt="{{ $pro_name }}" class="w-40 h-40 bg-gray-300 rounded-lg "></td>
-               
-                        <td>{{$pro_name}}</td>
-
-                        <td>{{$item->price}}</td>
-                        <td>{{$item->quantity}}</td>
-                        
-                        <td>
-                            {{-- <form action="{ route('removeitem', $item->product_id) }}" method="post">
-                                @csrf
-                                @method('DELETE') --}}
-                                <a href="{{route('removeitem', $item->id)}}" class="btn btn-error"  >remove</a>
-                            {{-- </form> --}}
-                        </td>
-
-                                                                              
-                    </tr>
+                            <td><img src="{{ asset('images/' . $cover) }}" alt="{{ $pro_name }}" class="w-40 h-40 bg-gray-300 rounded-lg "></td>
+                            <td>{{$pro_name}}</td>
+                            <td>{{$item->price}}</td>
+                            <td>{{$item->quantity}}</td>
+                            <td><a href="{{route('removeitem', $item->id)}}" class="btn btn-error"  >remove</a> </td>                                               
+                        </tr>
+                        @php
+                            $total +=  $item->price;
+                        @endphp
                     @endforeach
-</div>
+                    @if($total > 0)
+
+                    <tr>
+                        <td></td>
+                        <td>total</td>
+                        <td>{{$total}}</td>
+                       
+
+                        <td><a href="" class="btn btn-primary">checkout now</a></td>
+                     
+                    </tr>
+                    @endif
+                </div>
