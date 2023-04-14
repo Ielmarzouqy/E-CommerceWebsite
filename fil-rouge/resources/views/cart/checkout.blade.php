@@ -150,7 +150,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     <tr>
                         <td></td>
                         <td>total</td>
-                        <td>{{$total}}</td>
+                        <td>{{$total}}</td>b
                        
 
                      
