@@ -15,6 +15,8 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('parent_id')->unsigned()->nullable();
             $table->string('name');
+            
+
             $table->timestamps();
         });
     }

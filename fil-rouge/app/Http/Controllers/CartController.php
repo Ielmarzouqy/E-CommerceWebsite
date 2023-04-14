@@ -68,13 +68,19 @@ class CartController extends Controller
          
             'postal_code'=> $request->postal_code
         ]);
-        return redirect()->back()->with('message','added info');
+        return redirect()->route('checkout')->with('message','added info');
+        // return redirect()->back()->with('message','added info');
+
     }
 
     
-    public function update(Request $request, Cart $cart)
+    public function checkout()
     {
-        //
+        $userid = Auth::id();
+        $cart_items = Cart::where('user_id',$userid)->get();
+        $shipping_info = ShippingInfo::where('user_id',$userid)->first();
+        return view('cart.checkout', compact('cart_items', 'shipping_info'))->with('message','added info');
+        
     }
 
     /**

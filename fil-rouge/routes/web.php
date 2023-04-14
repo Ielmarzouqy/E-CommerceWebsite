@@ -27,10 +27,13 @@ Route::get('remove_cart_item{id}','RemoveCartItem')->name('removeitem');
     route::post('addtocart','addProductToCart')->name('addproducttocart');
     route::post('shipping','AddShippingInfo')->name('shipping');
 
-    route::get('/checkout','checkout')->name('chackout');
+    route::get('/checkout','checkout')->name('checkout');
     route::get('/shipping_adress','GetShippingAdress')->name('shippinginfo');
 
 
+});
+Route::get('user-dashboard', function(){
+    return view('user-dashboard');
 });
 
 // Route::get('remove{id}',[CartController::class,'removeCartItem'] 
