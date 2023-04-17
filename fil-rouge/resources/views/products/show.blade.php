@@ -16,15 +16,28 @@
         <form action="{{url('addtocart')}}" method="post">
         @csrf
         <input hidden type="text" value="{{$product->id}}" name="product_id">
-            <div class="form-group bg-red-300">
+            <div class="form-group border-gray-950">
         <input hidden type="text" value="{{$product->price}}" name="price">
 
-                <label class="bg-red-200" for="">how many pics?</label>
-                <input class="bg-red-200 border-spacing-1" type="number" name="quentity" id="">
+                <label class="" for="">how many pics?</label>
+                <input class="border-gray-950 border-2 border-spacing-1" type="number" name="quentity" id="">
             </div>
 
+            <div class="groups-btn-tree p-4 ">                 
+                <input data-btn-addtocart="" style="
+               
+                
+                padding: 13px !important;
+                
+                margin-bottom: 20px;
+                width: 100%;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                font-weight: 700;" type="submit" name="add" class="btn bg-[#de94a5]  rounded-lg text-white" id="product-add-to-cart" value="Add To Cart " data-form-id="#add-to-cart-form">
+                               
+              </div>
 
-            <input type="submit" name="submit"class="font-bold text-orange-600" value="Add To Cart">
+            {{-- <input type="submit" name="submit"class="font-bold text-orange-600" value="Add To Cart"> --}}
         </form>
                     
             </div>

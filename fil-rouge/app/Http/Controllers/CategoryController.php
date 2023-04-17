@@ -32,7 +32,13 @@ class CategoryController extends Controller
         $category->parent_id = null;
 
         $category->save();
-        return redirect()->back()->with('message', 'category created successfuly');
+        // In your controller
+
+    // Your code to save data
+    session()->flash('alert', 'Data saved successfully');
+    return redirect()->back();
+
+        // return redirect()->back()->with('message', 'category created successfuly');
       
         //   $validatedData = $this->($request);
         //    [

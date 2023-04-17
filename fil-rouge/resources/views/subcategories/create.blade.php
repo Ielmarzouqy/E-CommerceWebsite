@@ -16,6 +16,11 @@
   <div class=" wrapper  content" >
 	<div class="row">
 		<div class="col-lg-12 p-4">
+			@if (session()->has('alert'))
+    <div class="alert alert-success">
+        {{ session('alert') }}
+    </div>
+@endif
 			{{-- <ul class="breadcrumb panel">
 				<li> <a href="dashboard.php"><i class="fa fa-home"></i> Home </a> </li>
 				<li> <a href="dashboard.php"> Dashboard </a> </li>
@@ -29,6 +34,8 @@
 					<div class="form p-4">
 						<form class="form-horizontal" id="subCategory" method="post" action="{{route('subcategories.store')}}" enctype="multipart/form-data">
 							@csrf
+							
+
 							<div class="form-group p-2">
 								<label for="SubCategoryName" class="control-label col-lg-2">Sub-Category </label>
 								<div class="col-lg-7">

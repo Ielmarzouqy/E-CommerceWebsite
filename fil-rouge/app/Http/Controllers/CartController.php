@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\ShippingInfo;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class CartController extends Controller
 
     public function addProductToCart(Request $request)
     {
-        echo 'add product to cart function';
+      
         $product_price = $request->price;
         $quantity = $request->quentity;
         $price = $product_price * $quantity;
@@ -55,7 +56,7 @@ class CartController extends Controller
      */
     public function AddShippingInfo(Request $request)
     {
-        echo 'hi';
+        
         ShippingInfo::insert([
             'user_id'=>Auth::id(),
            
@@ -73,6 +74,9 @@ class CartController extends Controller
 
     }
 
+    public function PendingOrder(){
+        return view('cart.pendingorder');
+    }
     
     public function checkout()
     {
@@ -83,19 +87,37 @@ class CartController extends Controller
         
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function PlaceOrder(){
+        $userid = Auth::id();
+        $shipping_info = ShippingInfo::where('user_id',$userid)->first();
+        $cart_items = Cart::where('user_id', $userid)->get();
+        
+foreach($cart_items as $item){
+    Order::insert([
+        'userid'=>$userid,
+        'shipping_phoneNumber'=>$shipping_info->phone_number,
+        'shipping_city'=>$shipping_info->city_name,
+        'shipping_postalCode'=>$shipping_info->postal_code,
+        'product_id'=>$item->user_id,
+        'quantity'=>$item->quentity,
+        'total_price'=>$item->price,
+    ]);
+    // dd($item);
+
+    $id = $item->id;
+    $delete = Cart::findOrFail($id);
+    $delete->delete();
+    session()->flash('alert', 'your order placed successfully');
+return redirect()->route('pendingorder');
+
+}
+
+    }
     public function removeCartItem($id)
     {
-       
             $delete = Cart::findOrFail($id);
-            // dd($id);
             $delete->delete();
-        // return view('cart.show-single-product')->with('message','your pro added successfuly');
         return redirect()->back();
-            
-        
     
     }
 }

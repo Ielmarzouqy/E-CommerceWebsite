@@ -82,6 +82,12 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     <!-- ./navbar -->
 
     <!-- breadcrumb -->
+    @if (session()->has('alert'))
+    {{-- <div class="alert alert-success"> --}}
+        <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700" role="alert">
+        {{ session('alert') }}
+    </div>
+@endif
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
             <i class="fa-solid fa-house"></i>
@@ -157,6 +163,24 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     </tr>
                  
                 </div>
+                <div>
+                    <form action="" method="post">
+                    @csrf
+                            <input type="submit" value="cancel" name="" id="">
+
+                    </form>
+                </div>
+                <div>
+                    <form action=" {{route('placeorder')}}" method="post" >
+                        @csrf
+                        <button type="submit" class="block w-full py-3 px-4 text-center text-white bg-green-700  border border-indigo-600 rounded-md hover:bg-transparent hover:text-blue-500 transition font-medium">
+                            Place Order
+                        </button>
+                        {{-- <input type="submit" name="" value="Place Order" id=""> --}}
+                    </form>
+                </div>
+            </div>
+
    
 
 </body>

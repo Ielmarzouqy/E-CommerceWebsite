@@ -44,7 +44,12 @@ class SubcateroryController extends Controller
         $subcategory->parent_id = $request->id;
 
         $subcategory->save();
-        return redirect()->back()->with('message', 'sub-category created successfuly');
+        // In your controller
+  // Your code to save data
+    session()->flash('alert', 'Data saved successfully');
+    return redirect()->back();
+
+        // return redirect()->back()->with('message', 'sub-category created successfuly');
       
     }
 

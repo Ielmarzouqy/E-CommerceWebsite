@@ -26,6 +26,9 @@ Route::get('remove_cart_item{id}','RemoveCartItem')->name('removeitem');
     route::get('addtocart','addToCart')->name('addtocart');
     route::post('addtocart','addProductToCart')->name('addproducttocart');
     route::post('shipping','AddShippingInfo')->name('shipping');
+    route::post('place_order','PlaceOrder')->name('placeorder');
+
+    route::get('pending_order','PendingOrder')->name('pendingorder');
 
     route::get('/checkout','checkout')->name('checkout');
     route::get('/shipping_adress','GetShippingAdress')->name('shippinginfo');
