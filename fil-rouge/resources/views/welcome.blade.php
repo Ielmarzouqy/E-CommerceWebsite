@@ -49,7 +49,7 @@
                             @endif
 
                         @endauth
-                        <div class="flex justify-center m-4 ">
+                        <div class="flex justify-end  ">
                             <img src="./asset/images/logov.png" class="w-40 " alt="logo">
                         </div>
                         
@@ -57,8 +57,11 @@
             @endif
             {{-- image for slide --}}
             <div class="p-2 flex justify-center">
-                <img src="./asset/images/flower1.jpg" class="rounded-lg brightness-50 " alt="">
-                <div class="centered font-bold md:font-normal sm:font-normal bg-black p-8 rounded-lg  text-white">Flower crochet</div>
+                {{-- <img src="./asset/images/flower1.jpg" class="rounded-lg brightness-50 " alt=""> --}}
+                <img src="./asset/images/cov2.jpeg" class="rounded-lg brightness-50 " alt="">
+
+                <div class="centered  lg:font-smaller  p-8 rounded-lg  text-white">VINTAGE ROSE
+                  Exciting new additions to our Vintage Rose collection - inspired by all things vintage + romantic... ✨🥀</div>
                 
             </div>
           
@@ -96,67 +99,98 @@
     <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
         <img src="./asset/images/phone1.jpg" class="w-64 hover: rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
         <div>
-          <h1 class="text-center text-violet-700 text-2xl">title</h1>
-          <p class="font-bold text-center text-xl">20$</p>
-        <button class="rounded-full mx-end bg-violet-400 w-24 h-8 text-white hover:bg-violet-700">add to card</button>
+          <h1 class="text-center font-bold text-black text-2xl">title</h1>
+          <p class="font-bold text-center text-[#cd8193] text-xl">20$</p>
+        {{-- <button class="rounded-full mx-end bg-violet-400 w-24 h-8 text-white hover:bg-violet-700">add to card</button> --}}
 
         </div>
+       
+       
+      
+    </div class="flex justify-center" >
+    <a href="{{url('shop')}}" class="btn rounded-full p-4 text-[#cd8193] bg-white text-center flex justify-center   hover:bg-[#cd8193] ">  <span class="hover:text-white group-hover:text-white" >
+      Show More
+    </span>
+     </a>
+
+   {{-- <section>
+    <div>
+      <img src="" alt="">
+      <img data-srcset="//cdn.shopify.com/s/files/1/2026/1775/articles/unnamed_37b5ffa9-38e4-47a5-ae00-74506d79fdd8_570x.jpg?v=1679667910" alt="Monthly Phone Wallpaper" class=" ls-is-cached lazyloaded" loading="lazy" srcset="//cdn.shopify.com/s/files/1/2026/1775/articles/unnamed_37b5ffa9-38e4-47a5-ae00-74506d79fdd8_570x.jpg?v=1679667910">
+      <p>New month, new phone wallpaper! 🌜✨
+        This March, we are bringing you the very special Japanese Sakura season perfect for spring time 🌸✨ Get extra organised and pair with our free calendar printable!
+        As always, you can use it digitally on your mobile phone, or print + stick into your fav bullet journal spread for a scrapbook aesthetic!
+        To get yours, simply pop your email address into the box below!</p>
+    </div>
+    <div class="carousel-container">
+      <ul class="carousel-items">
+        <li class="carousel-item">Item 1</li>
+        <li class="carousel-item">Item 2</li>
+        <li class="carousel-item">Item 3</li>
+      </ul>
+    </div> 
+    <div class="carousel-container flex justify-center items-center">
+      <ul class="carousel-items flex">
+        <li class="carousel-item w-64 h-64 bg-gray-300 flex-shrink-0"></li>
+        <li class="carousel-item w-64 h-64 bg-gray-400 flex-shrink-0"></li>
+        <li class="carousel-item w-64 h-64 bg-gray-500 flex-shrink-0"></li>
+      </ul>
+    </div>
     
-        <img src="./asset/images/phone2.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <div>
-          <h1 class="t">title</h1>
-          <p>20$</p>
-        <button>add to card</button>
+   </section> --}}
 
-        </div>
-        
-        <img src="./asset/images/phone3.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2"alt="">
-        <div>
-          <h1>title</h1>
-          <p>20$</p>
-          <button>add to card</button>
 
-        </div>
-        <img src="./asset/images/phone4.jpg" class="w-64 rounded-lg border-2 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <div>
-          <h1>title</h1>
-          <p>20$</p>
-        <button>add to card</button>
-
-        </div>
+   <section>
+    <div>
+      <div>
+        <ul>
+          <li>
+            <p>Free Shipping</p>
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </div>
-    <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
-
-    <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
-        <img src="./asset/images/f1.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/f2.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/f3.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/f4.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-    </div>
-    <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
-
-    <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
-        <img src="./asset/images/e1.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-
-        <img src="./asset/images/e2.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/e3.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/e4.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-    </div>
-    <div class="font-bold bg-fuchsia-900 p-2  text-white" >Category <br></div>
-
-    <div class=" grid grid-rows-3 grid-flow-col gap-4 p-2">
-        <img src="./asset/images/d1.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/d2.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/d3.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-        <img src="./asset/images/d4.jpg" class="w-64 rounded-lg border-1 bg-fuchsia-800 row-end-3 row-span-2 p-2" alt="">
-    </div>
-    <footer class="bg-amber-200 p-4 h-20 block" >
-        <a href="">About</a>
-        <a href="">About</a>
-        <a href="">About</a>
-        <a href="">About</a>
+   </section>
+    <footer class="bg-white p-4  gap-8 flex justify-center" >
+     
+      <ul class="font-bold" > info
+        <li></li>
+        <li>blog</li>
+        <li>contanc</li>
+      </ul> 
+      <ul class="font-bold">shop
+        <li>wall art</li>
+        <li>crochet</li>
+        <li>flower</li>
+      </ul>
 
 
     </footer>
-    </body>
+  
+<script>
+  $(document).ready(function() {
+  $('.carousel-items').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    dots: true
+  });
+});
+</script>
+<style>
+  .carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-items.active {
+  transform: translateX(-50%);
+}
+.carousel-container:hover .carousel-items {
+  transform: translateX(-50%);
+}
+</style>
+</body>
 </html>

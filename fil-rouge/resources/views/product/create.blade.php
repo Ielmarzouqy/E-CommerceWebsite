@@ -23,7 +23,7 @@
 
     .cnt{
       margin-left: 25%;
-      background-color: rgb(234, 174, 244)
+      background-color: rgb(212, 13, 247)
     }
   </style>
     <div class="wrapper cnt">
@@ -125,22 +125,11 @@
                 <div class="form-group">
                     <label for="ProductName" class="col-lg-2 col-sm-2 control-label"> Product cover </label>
                     <div class="col-md-7">
-                      <input type="tags" name="cover" id="tag-input1" required>
+                      <input type="tags" name="cover[]" id="tag-input1"  multiple required>
                     </div>
                   </div>		
                 
-                {{-- <div class="form-group">
-                  <label class="control-label col-md-2 "> Product Master Image </label>
-                  <div class="controls col-md-9">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                      <span class="btn btn-default btn-file">
-                        <input type="file" name="product_master_image" class="default" onchange="readURL(this);" set-to="div7" required />
-                      </span>
-                      <span class="fileupload-preview" style="margin-left:5px;"></span>
-                      <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
-                    </div>
-                  </div>
-                </div> --}}
+                
                 <div class="form-group">
                   <label for="ProductName" class="col-lg-2 col-sm-2 control-label"> Product Tags </label>
                   <div class="col-md-7">

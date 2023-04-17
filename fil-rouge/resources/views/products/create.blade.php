@@ -23,7 +23,7 @@
     
         .cnt{
           margin-left: 25%;
-          background-color: rgb(244, 209, 249)
+          background-color: rgb(53, 181, 33)
         }
       </style>
         <div class="wrapper p-4 cnt">
@@ -140,7 +140,7 @@
                       <div class="controls col-md-9">
                         <div class="fileupload fileupload-new" data-provides="fileupload">
                           <span class="btn btn-default btn-file">
-                            <input type="file" name="cover" class="default"  set-to="div7" required />
+                            <input type="file" name="cover[]" class="default"  set-to="div7" multiple required />
                           </span>
                           <span class="fileupload-preview" style="margin-left:5px;"></span>
                           <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
