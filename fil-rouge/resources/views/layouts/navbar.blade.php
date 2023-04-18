@@ -27,8 +27,8 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
 <body>
     <header class="py-4 shadow-sm bg-white">
         <div class="container flex items-center justify-between">
-            <a href="index.html">
-                <img src="../assets/images/logo.svg" alt="Logo" class="w-32">
+            <a href="{{url('/')}}">
+                <img src="../asset/images/logov3.png" alt="Logo" class="w-32">
             </a>
 
             <div class="w-full max-w-xl relative flex">
@@ -36,10 +36,10 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </span>
                 <input type="text" name="search" id="search"
-                    class="w-full border border-primary border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
+                    class="w-full border border-violet-400 border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
                     placeholder="search">
                 <button
-                    class="bg-primary border border-primary text-white px-8 rounded-r-md hover:bg-transparent hover:text-primary transition">Search</button>
+                    class="bg-[#EDE9FE] hover:bg-[#927cf6] border border-violet-400 text-fuchsia-900 px-8 rounded-r-md  hover:text-fuchsia-200 transition">Search</button>
             </div>
 
             <div class="flex items-center space-x-4">
@@ -47,25 +47,25 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     <div class="text-2xl">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <div class="text-xs leading-3">Wishlist</div>
+                    <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400">Wishlist</div>
                     <div
-                        class="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
+                        class="absolute -right-2 -top-2 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
                         8</div>
                 </a>
                 <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
                     <div class="text-2xl">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </div>
-                    <div class="text-xs leading-3">Cart</div>
+                    <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400">Cart</div>
                     <div
-                        class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                        2</div>
+                        class="absolute -right-2 -top-2 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
+                       3</div>
                 </a>
                 <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
                     <div class="text-2xl">
                         <i class="fa-regular fa-user"></i>
                     </div>
-                    <div class="text-xs leading-3">Account</div>
+                    <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400">Account</div>
                 </a>
             </div>
         </div>
