@@ -1,14 +1,17 @@
 
+@extends('layouts.navbar')
+@section ('shop')
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <section class="bg-white ">
       <div class="container px-6 py-10 mx-auto animate-pulse">
-          <h1 class="w-48 h-2 mx-auto bg-gray-200 rounded-lg "></h1>
+
+          {{-- <h1 class="w-48 h-2 mx-auto bg-gray-200 rounded-lg "></h1>
   
           <p class="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg "></p>
           <p class="w-64 h-2 mx-auto mt-4 bg-gray-200 rounded-lg sm:w-80 "></p>
-  
+   --}}
           {{-- <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4"> --}}
   
            
@@ -44,4 +47,4 @@
 
   </section>
   
-  
+  @endsection

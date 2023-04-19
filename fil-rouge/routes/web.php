@@ -56,6 +56,8 @@ Route::get('side', function(){
 });
 
 Route::resource('/categories', CategoryController::class);
+
+
 Route::resource('/subcategories', SubcateroryController::class);
 
 Route::get('/subcat', [SubcateroryController::class,'index']);
@@ -73,7 +75,7 @@ Route::get('/', function () {
 Route::get('/statistic', function () {
     return view('statistic');
 });
-Route::get('/shop',[ProductsController::class, 'index']);
+Route::get('/shop',[ProductsController::class, 'shop']);
 Route::get('/contact', function(){
 return view('/contact-us');
 });

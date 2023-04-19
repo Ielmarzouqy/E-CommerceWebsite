@@ -262,7 +262,7 @@
             <div>
            
         </div>
-        @yield('dash')
+        {{-- @yield('dash') --}}
 </div>
         
     

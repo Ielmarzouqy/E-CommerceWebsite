@@ -18,14 +18,14 @@
             </div>
         </div>
     </div> --}}
-    @extends('layouts.sidebar')
+    @extends('layouts.side')
     @section('dash')
     @yield('content-statistic')
         
     @yield('create')
     @yield('category')
     @yield('sub-category')
-   
+   @yield('index')
 
 </x-app-layout>
 @endsection

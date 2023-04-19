@@ -16,6 +16,21 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        // $productsByCategory = Product::leftJoin('categories', 'products.sub_category', '=', 'categories.id')
+        // ->orderBy('categories.name')
+        // ->select('products.*', 'categories.name as category_name')
+        // ->get()
+        // ->groupBy('category_name');
+
+       
+
+         $products = Product::all();
+        return view('products.index', compact('products'));
+    // return view('/shop')->with(['products' => $productsByCategory]);
+    }
+
+    public function shop()
+    {
         $productsByCategory = Product::leftJoin('categories', 'products.sub_category', '=', 'categories.id')
         ->orderBy('categories.name')
         ->select('products.*', 'categories.name as category_name')
@@ -32,9 +47,6 @@ class ProductsController extends Controller
         //  $products = Product::all();
         // return view('products.index', compact('productsByCategory'));
         return view('/shop', compact('productsByCategory'));
-
-
-
     // return view('/shop')->with(['products' => $productsByCategory]);
     }
     public function create()
@@ -124,6 +136,8 @@ class ProductsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        Product::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

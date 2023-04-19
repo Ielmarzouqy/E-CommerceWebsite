@@ -26,7 +26,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
 </head>
 <body>
     <header class="py-4 shadow-sm bg-white">
-        <div class="container flex items-center justify-between">
+        <div class=" flex items-center justify-between">
             <a href="{{url('/')}}">
                 <img src="../asset/images/logov3.png" alt="Logo" class="w-32">
             </a>
@@ -50,18 +50,14 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
 
                     <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400"><a href="{{route('addtocart')}}">
                         Wishlist <sup class="bg-blue-600 rounded-full py-1 text-white px-2">2</sup></a></div>
-                    {{-- <div
-                        class="absolute right-40 top-4 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                        8</div> --}}
+                 
                 </a>
                 <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
                     <div class="text-2xl">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </div>
-                    <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400"> <a href="{{route('checkout')}}">Cart</a> </div>
-                    <div
-                        class="absolute -right-2 -top-2 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                       3</div>
+                    <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400"> <a href="{{route('checkout')}}">Cart <sup class="bg-blue-600 rounded-full py-1 text-white px-2">2</sup></a> </div>
+                 
                 </a>
                 <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
                     <div class="text-2xl">
@@ -75,3 +71,4 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     @yield ('detail')
     @yield('wishlist')
     @yield('checkout')
+    @yield('shop')
