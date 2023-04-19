@@ -2,6 +2,12 @@
 @extends('layouts.navbar')
 @section ('checkout')
 
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
+/>
+
+
 <script src="https://cdn.tailwindcss.com"></script>
 
     {{-- @if (session()->has('alert'))
@@ -105,16 +111,18 @@
                 <p class="text-gray-500 text-sm">Availability: <span class="text-green-600">In Stock</span></p>
             </div>
             <div class="text-primary text-lg font-semibold">{{$item->price}}</div>
-            <a href="#"
-                class="px-6 py-2 text-center text-sm text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">add
-                to cart</a>
+          
                 @php
                 $total +=  $item->price;
             @endphp
-        @endforeach
+       
+        <form action="" method="post">
+            @csrf
+                <input class="btn btn-error text-white" type="submit" value="cancel" name="" id="">
+            </form>
                 <form action=" {{route('placeorder')}}" method="post" >
                     @csrf
-                    <button type="submit" class="px-6 py-2 text-center text-sm text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">
+                    <button type="submit" class="bg-fuchsia-700 text-fuchsia-700   px-6 py-2 text-center text-sm   hover:bg-fuchsia-700 font-bold  rounded   transition uppercase font-roboto ">
                         Place Order
                     </button>
                 </form>
@@ -122,7 +130,7 @@
                 <i class="fa-solid fa-trash"></i>
             </div>
         </div>
-
+        @endforeach
       
     </div>
 </div>              
