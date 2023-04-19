@@ -19,7 +19,12 @@ use App\Http\Controllers\SubcateroryController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::get('addtocart', [ CartController::class,'addProductToCart']);
+// Route::get('addtocart', [ CartController::class,'addProductToCart']);*
+
+Route::get('modal', function(){
+    return view ('cart.modal');
+
+});
 Route::controller(CartController::class)->group(function(){
 Route::get('remove_cart_item{id}','RemoveCartItem')->name('removeitem');
 

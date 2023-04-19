@@ -87,10 +87,7 @@
                 <div class="col-span-4 border border-gray-200 p-4 rounded">
                     <h4 class="text-gray-800 text-lg mb-4 font-medium uppercase">order summary</h4>
                     <div class="space-y-2">
-                    {{-- <a type="submit" href=""
-                        class="block w-full py-3 px-4 text-center text-white bg-blue-500  border border-indigo-600 rounded-md hover:bg-transparent hover:text-blue-500 transition font-medium">Place
-                        order
-                    </a> --}}
+                   
                     <button type="submit" class="block w-full py-3 px-4 text-center text-white bg-blue-500  border border-indigo-600 rounded-md hover:bg-transparent hover:text-blue-500 transition font-medium">
                         order
                     </button>
