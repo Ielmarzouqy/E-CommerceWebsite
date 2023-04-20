@@ -1,7 +1,7 @@
 @extends('dashboard')
     @section('index')
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
   
             
 

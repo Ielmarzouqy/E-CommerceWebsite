@@ -7,8 +7,8 @@
 
 	.content{
 		
-		margin-left: 24%;
-		background-color: rgb(66, 102, 133)
+		/* margin-left: 24%; */
+		background-color: rgb(176, 209, 237)
 	}
   </style>
 @extends('dashboard')

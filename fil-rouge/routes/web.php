@@ -59,6 +59,8 @@ Route::resource('/categories', CategoryController::class);
 
 
 Route::resource('/subcategories', SubcateroryController::class);
+Route::get('/subcategories{id}/edit', [SubcateroryController::class, 'edit'])->name('editsubcategory');
+
 
 Route::get('/subcat', [SubcateroryController::class,'index']);
 

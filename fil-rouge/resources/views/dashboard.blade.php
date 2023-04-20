@@ -26,6 +26,7 @@
     @yield('category')
     @yield('sub-category')
    @yield('index')
+   @yield('allsubcategories')
 
 </x-app-layout>
 @endsection

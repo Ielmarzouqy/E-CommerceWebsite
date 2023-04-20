@@ -12,14 +12,14 @@ class SubcateroryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('children')->whereNull('parent_id')->get();
+        $subcategories = Category::with('children')->whereNotNull('parent_id')->get();
 
         // return view('subcategories.create')->with([
         //   'categories'  => $categories
         // ]);
         return view('subcategories.index')->with([
             'message'=> 'category created successfuly',
-            'categories'  => $categories
+            'subcategories'  => $subcategories
     ]);
     }
 
@@ -28,8 +28,10 @@ class SubcateroryController extends Controller
      */
     public function create()
     {
-        return view('subcategories.create',[
-            'categories'=>self::index()->categories
+        $categories = Category::with('children')->whereNull('parent_id')->get();
+        return view('subcategories.create',
+        [
+            'categories'=>$categories
         ]);
 
     }
@@ -58,28 +60,22 @@ class SubcateroryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $categories = Category::with('children')->whereNull('parent_id')->get();
+
+        // return view('product.edit')->with($product)->with($categories);
+        return view('subcategories.edit')->with($categories);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
  public function destroy($id){
             $delete = category::findOrFail($id);
             $delete->delete();

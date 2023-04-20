@@ -134,7 +134,7 @@
                                     <div class="menu-item-collapse">
                                         <div class="min-h-0">
                                             <label class="menu-item  ml-6"> <a href="{{route('subcategories.create')}}"> Add Sub_Category </a></label>
-                                            <label class="menu-item ml-6"> <a href="">List Sub_Categories</a> </label>
+                                            <label class="menu-item ml-6"> <a href="{{route('subcategories.index')}}">List Sub_Categories</a> </label>
                                         </div>
                                     </div>
                                 </li>
