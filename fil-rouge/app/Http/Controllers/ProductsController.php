@@ -111,24 +111,56 @@ class ProductsController extends Controller
     // });
     }
 
-    public function edit(Product $product)
+    public function edit($id)
 {
-    //   if (optional($product->user_id != Auth::id())) {
-    //     return redirect()->back();
-    // dd();
-    //   }
-
-      $categories = Category::with('children')->whereNull('parent_id')->get();
-
-      return view('product.edit')->with($product)->with($categories);
+    $product_to_edit = Product::findOrFail($id);
+  
+      $categories = Category::with('children')->whereNull('parent_id')->get()->all();
+    //   dd($product_to_edit->description);
+      return view('products.edit',[
+        'product' => $product_to_edit,
+        'categories'=>$categories,
+      ]);
+    // return view('products.edit');
 }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request,  $id)
     {
-        //
+            $request->validate([
+                'title'=>'required',
+                'category_id'=>'required',
+                'sub_category'=>'required',
+                'description'=>'required',
+                'price'=>'required',
+                'quantity'=>'required',
+                'cover'=>'required',
+                'slug'=>'required',
+            
+            ]);
+        
+                $pro_to_update=Product::findOrFail($id);
+                $pro_to_update->title= $request->input('title');
+                $pro_to_update->category_id= $request->input('category_id');
+                $pro_to_update->sub_category= $request->input('sub_category');
+                $pro_to_update->description= $request->input('description');
+                $pro_to_update->price= $request->input('price');
+                $pro_to_update->quantity= $request->input('quantity');
+                $pro_to_update->cover= $request->input('cover');
+                $pro_to_update->slug= $request->input('slug');
+
+              
+        
+                if($cover = $request->file('cover')){
+                    $dist_path = 'images/';
+                    $cover_name= date('YmdHis') . '.' . $cover->getClientOriginalExtension();
+                    $cover->move( $dist_path,  $cover_name);
+                }
+                $inp['cover']="$cover_name";
+                
+                $pro_to_update->fill($inp);
+                $pro_to_update->save();
+                return redirect()->route('products.index', $id);
+            
     }
 
     /**

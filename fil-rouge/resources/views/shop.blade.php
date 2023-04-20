@@ -31,7 +31,7 @@
 
                 <p class="w-24 h-2 mt-4 rounded-lg">Price: {{ $product->price }}</p>
                 <a href="{{route('products.show',['product'=>$product['id']])}}" >
-                <button class="btn my-8 w-24 h-8 rounded-lg text-white hover:text- bg-[#cd8193]">Learn More</button>
+                <button class="btn my-8 w-30 h-8 rounded-lg text-white hover:text- bg-[#cd8193]">Learn More</button>
                 </a>
                
             </div>

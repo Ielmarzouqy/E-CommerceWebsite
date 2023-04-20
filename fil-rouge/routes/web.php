@@ -63,6 +63,8 @@ Route::resource('/subcategories', SubcateroryController::class);
 Route::get('/subcat', [SubcateroryController::class,'index']);
 
 Route::resource('/products', ProductsController::class);
+Route::get('/products{id}/edit', [ProductsController::class, 'edit'])->name('editproduct');
+
 
 Route::get('/pro1', function(){
     return view('products.create');
