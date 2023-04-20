@@ -63,12 +63,20 @@ class SubcateroryController extends Controller
         
     }
 
-    public function edit(string $id)
+    public function edit($id)
     {
+
+        $subcategory= Category::findOrFail($id);
         $categories = Category::with('children')->whereNull('parent_id')->get();
 
         // return view('product.edit')->with($product)->with($categories);
-        return view('subcategories.edit')->with($categories);
+        // return view('subcategories.edit')->with($categories)->with($subcategory);
+        // dd($subcategory);
+        return view('subcategories.edit',[
+"subcategory"=>$subcategory,
+"categories"=>$categories
+        ]);
+
     }
 
     public function update(Request $request, string $id)
