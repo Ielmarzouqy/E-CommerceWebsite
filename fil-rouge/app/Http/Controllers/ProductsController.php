@@ -159,7 +159,9 @@ class ProductsController extends Controller
                 
                 $pro_to_update->fill($inp);
                 $pro_to_update->save();
-                return redirect()->route('products.index', $id);
+                session()->flash('alert', 'Data saved successfully');
+                return redirect()->back();
+                // return redirect()->route('products.index', $id);
             
     }
 

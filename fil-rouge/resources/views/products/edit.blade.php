@@ -11,6 +11,8 @@
           background-color: rgb(232, 190, 237)
         }
       </style>
+
+
         <div class="wrapper p-2 cnt">
           <div class="row">
             <div class="col-lg-12 col-sm-12">
@@ -19,6 +21,18 @@
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li class="active">Edit Product</li>
               </ul>
+
+              
+              <div class=" wrapper  content" >
+                <div class="row">
+                  <div class="col-lg-12 p-4">
+                    @if (session()->has('alert'))
+                  <div class="alert alert-success">
+                      {{ session('alert') }}
+                  </div>
+              @endif
+
+
               <section class="panel">
                 <header class="panel-heading">
                   Edit PRODUCTS
@@ -35,18 +49,7 @@
                           <input type="text" name="title" value="{{$product->title}}" class="form-control" id="product_name" required>
                         </div>
                       </div>
-                    {{-- <div class="form-group ">
-                      <label for="ProductStatus" class="control-label col-lg-2">Category</label>
-                        <div class="col-lg-7">
-                            <select class="form-control" name="category_id" >
-                                <option value="">Select a Category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" >{{ $category->name }}</option>
                     
-                                @endforeach
-                            </select>
-                        </div>
-                    </div> --}}
                     <div class="form-group">
                       <label for="category_id">Category</label>
                       <select class="form-control" name="category_id" required>
@@ -54,11 +57,7 @@
                   
                           @foreach ($categories as $category)
                               <option value="{{ $category->id }}" {{ $category->id === $product->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
-                              {{-- @if ($category->children)
-                                  @foreach ($category->children as $child)
-                                      <option value="{{ $child->id }}" {{ $child->id === $product->category_id ? 'selected' : '' }}>&nbsp;&nbsp;{{ $child->name }}</option>
-                                  @endforeach
-                              @endif --}}
+                           
                           @endforeach
                       </select>
                   </div>
@@ -77,17 +76,6 @@
                             </select>
                         </div>
                     </div>
-{{--                                     
-                    <div class="form-group">
-                      <label for="ProductSummary"  value="{{$product->description}}" class="col-lg-2 col-sm-2 control-label"> Product description </label>
-                      <div class="col-lg-10">
-                        <div class="form-group">
-                          <div class="col-md-10">
-                            <textarea name="description" value="{{$product->description}}" class="form-control" id="summerOne" rows="9" required></textarea>
-                          </div>
-                        </div>
-                      </div>
-                    </div>								 --}}
                  
                     <div class="form-group">
                       <label for="ProductSummary" class="col-lg-2 col-sm-2 control-label"> Product description </label>
