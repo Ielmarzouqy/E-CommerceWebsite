@@ -56,7 +56,7 @@ Route::get('side', function(){
 });
 
 Route::resource('/category', CategoryController::class);
-
+Route::get('/category{id}/edit', [CategoryController::class, 'edit'])->name('editcategory');
 
 Route::resource('/subcategories', SubcateroryController::class);
 Route::get('/subcategories{id}/edit', [SubcateroryController::class, 'edit'])->name('editsubcategory');
