@@ -55,7 +55,7 @@ Route::get('side', function(){
     return view('layouts.side');
 });
 
-Route::resource('/categories', CategoryController::class);
+Route::resource('/category', CategoryController::class);
 
 
 Route::resource('/subcategories', SubcateroryController::class);

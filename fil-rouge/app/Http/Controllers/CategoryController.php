@@ -11,17 +11,14 @@ class CategoryController extends Controller
     {
       $categories = Category::with('children')->whereNull('parent_id')->get();
 
-      return view('categories.index')->with([
+      return view('category.index')->with([
         'categories'  => $categories
       ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+       
     }
 
     public function store(Request $request)
@@ -95,6 +92,6 @@ public function destroy(Category $category)
 
         $category->delete();
 
-        return redirect()->route('subcategories.index')->withSuccess('You have successfully deleted a Category!');
+        return redirect()->route('category.index')->withSuccess('You have successfully deleted a Category!');
 }
 }

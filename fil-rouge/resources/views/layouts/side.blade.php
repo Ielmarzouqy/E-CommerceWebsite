@@ -105,7 +105,7 @@
                                     <div class="menu-item-collapse">
                                         <div class="min-h-0">
                                             <label class="menu-item  ml-6"> <a href="{{url('/add-category')}}"> Add Category </a></label>
-                                            <label class="menu-item ml-6"> <a href="">List Categories</a> </label>
+                                            <label class="menu-item ml-6"> <a href="{{route('category.index')}}">List Categories</a> </label>
                                         </div>
                                     </div>
                                 </li>
