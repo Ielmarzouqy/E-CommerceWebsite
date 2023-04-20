@@ -21,8 +21,6 @@
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li class="active">Edit Product</li>
               </ul>
-
-              
               <div class=" wrapper  content" >
                 <div class="row">
                   <div class="col-lg-12 p-4">
@@ -31,8 +29,6 @@
                       {{ session('alert') }}
                   </div>
               @endif
-
-
               <section class="panel">
                 <header class="panel-heading">
                   Edit PRODUCTS

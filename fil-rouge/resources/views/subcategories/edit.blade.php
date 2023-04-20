@@ -30,12 +30,11 @@
 				<header class="panel-heading text-blod">
 					<h1>CREATE A NEW SUB CATEGORY<h1>
 				</header>
+				<form class="form-horizontal" id="subCategory" method="post" action="{{ route('updatesubcategory', ['subcategory' => $subcategory->id])}}" enctype="multipart/form-data">
+					@csrf
+					@method('put')
 				<div class="panel-body ">
 					<div class="form p-4">
-						<form class="form-horizontal" id="subCategory" method="post" action="{{route('subcategories.store')}}" enctype="multipart/form-data">
-							@csrf
-							
-
 
 							<div class="form-group p-2">
 								<label for="SubCategoryName" class="control-label col-lg-2">Sub-Category </label>
@@ -49,7 +48,7 @@
 							<div class="form-group p-2">
 								<label for="CategoryStatus" class="control-label col-lg-2"> shoose category </label>
 								<div class="col-lg-7">
-								  <select class="form-control" name="id">
+								  <select class="form-control" name="parent_id">
 									<option value="">Select Parent Category</option>
 					  
 									@foreach ($categories as $category)
@@ -62,14 +61,15 @@
 								</div>
 							  </div>
 							<div class="form-group p-2">
+                                
 								<div class="col-lg-offset-2  col-lg-10">
-									<button name="submit" class="btn btn-success text-success" type="submit"> Save </button>
-									<button class="btn btn-info " type="reset"> Reset </button>
+									<button name="submit" class="btn btn-success text-success" type="submit"> Up Date </button>
 								</div>
 							</div>
-						</form>
 					</div>
 				</div>
+			</form>
+
 			</section>
 		</div>
 	</div>

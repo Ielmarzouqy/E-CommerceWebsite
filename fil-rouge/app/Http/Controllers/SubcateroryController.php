@@ -79,9 +79,23 @@ class SubcateroryController extends Controller
 
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        
+        $request->validate([
+            'name'=>'required',
+            'parent_id'=>'required',
+
+        ]);
+
+        $subcat_to_update = Category::findOrFail($id);
+        // dd($subcat_to_update);
+         $subcat_to_update->name= $request->input('name');
+         $subcat_to_update->parent_id= $request->input('parent_id');
+         
+        $subcat_to_update->update();
+        session()->flash('alert', 'Data saved successfully');
+        return redirect()->back();
+        // return view('subcategories.index');
     }
 
  public function destroy($id){

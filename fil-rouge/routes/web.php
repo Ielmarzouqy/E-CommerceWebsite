@@ -60,6 +60,8 @@ Route::resource('/categories', CategoryController::class);
 
 Route::resource('/subcategories', SubcateroryController::class);
 Route::get('/subcategories{id}/edit', [SubcateroryController::class, 'edit'])->name('editsubcategory');
+Route::put('/subcategories{subcategory}/update', [SubcateroryController::class, 'update'])->name('updatesubcategory');
+
 
 
 Route::get('/subcat', [SubcateroryController::class,'index']);
