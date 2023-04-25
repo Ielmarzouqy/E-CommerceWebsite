@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- <img src="./asset/images/logovv.png" alt=""> --}}
-    <title  <img src="./asset/images/logovv.png" alt="logo">  minart</title>
+    <title  >  minart</title>
 
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
 
@@ -72,3 +72,17 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     @yield('wishlist')
     @yield('checkout')
     @yield('shop')
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+</section> 
+
+<script>
+  $(document).ready(function() {
+    $('#search').on('keyup', function() {
+      var value = $(this).val().toLowerCase();
+      $('#shop .cardd').filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>

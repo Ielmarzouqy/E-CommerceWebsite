@@ -27,7 +27,7 @@
                             <tr>
                                 <th>3</th>
                                 <td>{{$product->title}}</td>
-                                <td> {{$product->description}}</td>
+                                <td> {{ Str::limit($product->description,18)}}</td>
                                 <td>{{$product->price}}</td>
                                
                                 <td>{{$product->quantity}}</td>

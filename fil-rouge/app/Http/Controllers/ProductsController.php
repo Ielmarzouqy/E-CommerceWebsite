@@ -37,15 +37,6 @@ class ProductsController extends Controller
         ->get()
         ->groupBy('category_name');
 
-        // Product::leftjoin('categories', 'products.sub_category', '=', 'categories.id')
-        // ->orderBy('categories.name')
-        // ->select('products.*', 'categories.name as category_name')
-        // ->get()
-        // ->groupBy('category_name');
-
-
-        //  $products = Product::all();
-        // return view('products.index', compact('productsByCategory'));
         return view('/shop', compact('productsByCategory'));
     // return view('/shop')->with(['products' => $productsByCategory]);
     }
@@ -66,13 +57,11 @@ class ProductsController extends Controller
             'description'   => 'required|min:3',
             'cover'         => 'required',
             'price'         => 'required',
-
             'category_id'   => 'required',
             'sub_category'   => 'required',
             'quantity'   => 'required',
             
         ]);
-     
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['slug'], '-');

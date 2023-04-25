@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('shipping_infos', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone_number');
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('city_name');
             $table->string('adress');
             $table->string('postal_code');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

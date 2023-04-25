@@ -25,8 +25,8 @@ return new class extends Migration
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('sub_category')->unsigned()->nullable();
   
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
           });
     }
@@ -38,6 +38,6 @@ return new class extends Migration
     { Schema::table('products', function (Blueprint $table) {
         $table->dropForeign(['category_id']);
         $table->dropColumn('category_id');
-    });Schema::dropIfExists('products');
+    });
     }
 };
