@@ -70,15 +70,13 @@ class ProductsController extends Controller
             'category_id'   => 'required',
             'sub_category'   => 'required',
             'quantity'   => 'required',
-
-
             
         ]);
      
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['slug'], '-');
-    
+        
          // Upload the image file
     $imageName = time() . '.' . $request->cover->getClientOriginalExtension();
     $request->cover->move(public_path('images'), $imageName);
@@ -87,6 +85,7 @@ class ProductsController extends Controller
     $product = Product::create($data);
         // $product= Product::create($data);
         
+        session()->flash('alert', 'Product saved successfully');
        
         return redirect()->back()->with('message', 'category created successfuly');
 
