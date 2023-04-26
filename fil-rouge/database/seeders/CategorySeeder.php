@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CategorySeeder extends Seeder
 {
@@ -12,6 +13,61 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
-    }
+        DB::table('categories')->insert(  [
+            [
+                'name' => 'home decoration',
+                
+            ],
+            [
+                'name' => 'crochet art',
+                
+            ],
+            [
+                'name' => 'embroidery art',
+                
+            ],
+            [   
+                'name' => 'wall art',
+                
+                
+            ],
+            [   
+                'name' => 'carpet',
+                
+                
+            ],
+            [   
+                'name' => 'flower',
+                
+                
+            ],
+            [   
+                'name' => 'crochet decor',
+                
+                
+            ],
+            [   
+                'name' => 'bag',
+                
+                
+            ],
+            [   
+                'name' => 'hoop arabic',
+                
+                
+            ],
+            [
+                
+                'name' => 'hoop english',
+                
+                
+            ],
+            [   
+                'name' => 'clothes',
+                
+                
+            ]
+
+            ]);
+           }
 }

@@ -108,106 +108,107 @@
         </div>
       </div> --}}
 
-      <section class="bg-white ">
+      <section class=" ">
         
-        <div  id="shop" class="container px-6 py-10 mx-auto ">
-          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
-      <div  class="category">
-          <h2 class="text-center font-bold">PUNCH NEEDLE</h2>
-              <div  class=" cardd card product p-4 w-full">
-                  <img src="./asset/images/pn3.png" alt="" class="w-full h-64 bg-gray-400 rounded-lg ">
-                  <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3>
-              <p class="  btn my-8 w-30 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193] w-28 ">Price: 34.67$</p>
+        <div  id="shop" class="container px-4 py-2 mx-auto ">
+          <div class="  grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
+      <div  class=" product category">
+          {{-- <h2 class="text-center font-bold">PUNCH NEEDLE</h2> --}}
+              <div  class=" cardd card pro p-2 w-full">
+                  <img src="./asset/images/pn3.png" alt="" class=" image w-full h-64 bg-gray-400 rounded-lg ">
+                  {{-- <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3> --}}
+                  <div class="flex justify-center">
+                    <p class="  btn my-8 w-36 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193]  font-bold">PUNCH NEEDLE</p>
+                  </div>
               </div>
       </div>
-      <div  class="category">
-        <h2 class="text-center font-bold">HOME DECOR</h2>
-            <div  class=" cardd card product p-4 w-full">
-                <img src="./asset/images/cov3.png" alt="" class="w-full h-64 bg-gray-300 rounded-lg ">
-                <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3>
-                <p class="  btn my-8 w-30 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193] w-28 ">Price: 34.67$</p>
+      <div  class="product category">
+        {{-- <h2 class="text-center font-bold">HOME DECOR</h2> --}}
+            <div  class=" cardd card pro p-2 w-full">
+                <img src="./asset/images/cov3.png" alt="" class=" image w-full h-64 bg-gray-300 rounded-lg ">
+                {{-- <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3> --}}
+                <div class="flex justify-center">
+                  <p class="  btn my-8 w-36 h-8 text-center rounded-lg  text-white hover:text- bg-[#cd8193]   font-bold">HOME DECOR</p>
+                </div>
             </div>
-    </div>
-    <div  class="category">
-      <h2 class="text-center font-bold">CROCHET ART</h2>
-          <div  class=" cardd card product p-4 w-full">
-              <img src="./asset/images/f2.jpg" alt="" class="w-full h-64 bg-gray-300 rounded-lg ">
-              <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3>
-              <p class="  btn my-8 w-30 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193] w-28 ">Price: 34.67$</p>
+      </div>
+   
+    <div  class=" product category">
+      {{-- <h2 class="text-center font-bold">CROCHET ART</h2> --}}
+          <div  class=" cardd card pro p-2 w-full">
+              <img src="./asset/images/f2.jpg" alt="" class=" image w-full h-64 bg-gray-300 rounded-lg ">
+              {{-- <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3> --}}
+              <div class="flex justify-center">
+                 <p class="  btn my-8 w-36 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193] font-bold">CROCHET ART</p>
+              </div>
           </div>
   </div>
-  <div  class="category">
-    <h2 class="text-center font-bold">EMBROIDERY ART</h2>
-        <div  class=" cardd card product p-4 w-full">
-            <img src="./asset/images/e333.jpg" alt="" class="w-full h-64 bg-gray-300 rounded-lg ">
-            <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3>
-            <p class="  btn my-8 w-30 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193] w-28 ">Price: 34.67$</p>
+  <div  class=" product category">
+    {{-- <h2 class="text-center font-bold">EMBROIDERY ART</h2> --}}
+        <div  class="product card pro p-2 w-full">
+            <img src="./asset/images/e333.jpg" alt="" class="image w-full h-64 bg-gray-300 rounded-lg ">
+            {{-- <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="">title</h3> --}}
+            <div class="flex justify-center">
+               <p class="  btn my-8 w-36 h-8 text-center rounded-lg text-white hover:text- bg-[#cd8193]  font-bold ">EMBROIDERY ART</p>
+            </div>
         </div>
 </div>
   </div>
       </div>
+    <div class=" p-4 flex justify-center" >
+    <a href="{{url('shop')}}" class=" rounded-full  bg-violet-400 w-32 text-center h-8 text-white  hover:bg-violet-700 ">
+        Show More
+    </a>
+   </div>
     </section>
-    </div class="flex justify-center" >
-    <a href="{{url('shop')}}" class="btn rounded-full p-4 bg-violet-400 w-24 h-8 text-white text-center flex justify-center  hover:bg-violet-700 ">  <span class="hover:text-white group-hover:text-white" >
-      Show More
-    </span>
-     </a>
+   
 
-{{-- 
-   <section>
+<section>
     <div>
-      <div>
-        <ul>
-          <li>
-            <p>Free Shipping</p>
+      <div class=" container px-4 py-2 mx-auto ">
+        <ul class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-3">
+        
+          <li class="promo">
+            <img src="./asset/images/promonn.png" class="w-full h-50 bg-gray-300 rounded-lg" alt="">
+            <p class="text">personalize work</p>
           </li>
-          <li></li>
-          <li></li>
+          <li class="promo">
+            <img src="./asset/images/promo3.png" class="w-full h-50 bg-gray-300 rounded-lg" alt="">
+            <p class="text">cotton hight quality</p>
+          </li>
+          <li class="promo">
+            <img src="./asset/images/new.png" class="w-full h-50 bg-gray-300 rounded-lg" alt="">
+            <p class="text">Promotion </p>
+          </li>
         </ul>
       </div>
     </div>
-   </section> --}}
-    <footer class="bg-white p-4  gap-8 flex justify-center" >
-     
-      <ul class="font-bold" > info
-        <li></li>
-        <li>blog</li>
-        <li>contanc</li>
-      </ul> 
-      <ul class="font-bold">shop
-        <li>wall art</li>
-        <li>crochet</li>
-        <li>flower</li>
-      </ul>
+   </section>
+    <footer class="bg-white   gap-8" >
+      <div class=" p-8 flex justify-between">
+        <div class="w-32 ">
+          <img src="./asset/images/logov3.png" alt="">
+        </div>
+        <div>
+          <a href="{{url('shop')}}"><ul class="font-bold   text-fuchsia-700 hover:text-fuchsia-900 " > SHOP</a>
+            
+            <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "><li>HOME DECORATION</li></a>
+            <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "><li>EMBROIDERY ART</li></a>
+            <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "> <li>CROCHET ART</li></a>
+          </ul> 
+        </div>
 
+        <div>
+          <ul class="font-bold text-fuchsia-600 hover:text-fuchsia-800 ">INFORMATION
+            <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "> <li>ABOUT</li></a>
+            <li class=" text-fuchsia-600 hover:text-fuchsia-800 ">FACEBOOK</li>
+            <li  class=" text-fuchsia-600 hover:text-fuchsia-800 ">INSTAGRAM</li>
+          </ul>
+        </div>
+      </div>
 
     </footer>
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js">
-
-//   $(document).ready(function() {
-//   $('.carousel-items').slick({
-//     autoplay: true,
-//     autoplaySpeed: 2000,
-//     arrows: false,
-//     dots: true
-//   });
-// });
-
-import 'flowbite';
-
-const $prevButton = document.getElementById('data-carousel-prev');
-const $nextButton = document.getElementById('data-carousel-next');
-
-$prevButton.addEventListener('click', () => {
-    carousel.prev();
-});
-
-$nextButton.addEventListener('click', () => {
-    carousel.next();
-    console.log(1)
-});
-</script>
 <style>
   .centered {
   position: absolute;
@@ -220,6 +221,42 @@ $nextButton.addEventListener('click', () => {
   top: 8px;
   left: 16px;
 }
+.product{
+  cursor: pointer;
+  /* background-color: rgb(154, 154, 246); */
+
+}
+.product:hover .pro {
+  /* opacity: 0.3;
+   */
+   transform: scale(1.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  position: absolute; 
+  bottom: 20px; 
+  background: rgb(76, 14, 77);
+  background: rgba(112, 4, 112, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 40px;
+  padding: 40px;
+  text-align: center;
+}
+.promo {
+  position: relative;
+ 
+}
+.promo:hover .text {
+  opacity: 2;
+}
+
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
 </body>
 </html>
