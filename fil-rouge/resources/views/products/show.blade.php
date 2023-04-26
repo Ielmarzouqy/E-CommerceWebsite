@@ -52,7 +52,7 @@
         <span class="text-sm text-gray-400">
             <i class="fa-solid fa-chevron-right"></i>
         </span>
-        <p class=" justify-self-center text-gray-600 font-medium">Product</p>
+        <p class=" justify-self-center text-fuchsia-600 font-medium">Product</p>
     </div>
     <!-- ./breadcrumb -->
 
@@ -78,7 +78,7 @@
             <div class="space-y-2">
                 <p class="text-gray-800 font-semibold space-x-2">
                     <span>Availability: </span>
-                    <span class="text-green-600">In Stock</span>
+                    <span class="text-green-600">{{$product->Availability}}</span>
                 </p>
                
                 
@@ -105,7 +105,7 @@
                 <input hidden type="text" value="{{$product->price}}" name="price">
         
                         <label class="text-sm text-gray-800 uppercase" for="">how many pics?</label>
-                        <input class="border-gray-950 border-2 border-spacing-1  flex  text-gray-600 divide-x p-1 font-bold divide-gray-300 w-max" type="number" value="1" name="quentity" id="">
+                        <input class="border-gray-950 border-2 border-spacing-1  flex  text-gray-600 divide-x p-1 font-bold divide-gray-300 w-max" type="number" value="1" name="quantity" id="">
                     </div>
 
             <div class=" flex gap-3  border-gray-200 pb-5 pt-5">

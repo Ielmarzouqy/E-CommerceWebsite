@@ -27,14 +27,14 @@
                             <tr>
                                 <th>3</th>
                                 <td>{{$product->title}}</td>
-                                <td> {{ Str::limit($product->description,18)}}</td>
+                                <td> {{ Str::limit($product->description,22)}}</td>
                                 <td>{{$product->price}}</td>
                                
                                 <td>{{$product->quantity}}</td>
                                 <td> <img src="{{ asset('images/' . $product->cover)}}" alt=""> </td>
                               
-                                <td>Rio_çu_çu_çed</td>
-                              
+                                <td><span class="badge  w-16 h-4 badge-success">{{$product->Availability}}</span>
+                                </td>
                                 <td class="flex gap-2">
                                     <a href="{{route('editproduct',$product->id)}}">
                                         <button class="  gap-2 btn btn-warning">

@@ -23,8 +23,8 @@ class ProductTableSeeder extends Seeder
                 'user_id' => 1,
                 'quantity'=>2,
 
-                'category_id' => 3,
-                'sub_category' => 4,
+                'category_id' => 1,
+                'sub_category' => 2,
             ],
             [
                 'title' => 'Product 2',
@@ -34,8 +34,8 @@ class ProductTableSeeder extends Seeder
                 'price' => 10.99,
                 'user_id' => 1,
                 'quantity'=>2,
-                'category_id' => 3,
-                'sub_category' => 4,
+                'category_id' => 1,
+                'sub_category' => 2,
             ]
         ]);
 

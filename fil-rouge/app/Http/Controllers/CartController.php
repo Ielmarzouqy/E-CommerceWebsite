@@ -32,17 +32,15 @@ class CartController extends Controller
 
     public function addProductToCart(Request $request)
     {
-      
+        $cart = new Cart;
+        $cart->user_id  =Auth::id();
+        $cart->product_id = $request->product_id;
         $product_price = $request->price;
-        $quantity = $request->quentity;
-        $price = $product_price * $quantity;
-        // dd($request);
-        Cart::insert([
-        'product_id'=>$request->product_id,
-        'user_id'=> Auth::id(),
-        'quentity'=>$request->quentity,
-        'price'=>$price,
-        ]);
+        $cart->quantity = $request->quantity;
+        $price = $product_price * $cart->quantity;
+        $cart->price = $price;
+      
+        $cart->save();
         return redirect()->route('addtocart')->with('message','your pro added successfuly');
     }
 
@@ -56,19 +54,30 @@ class CartController extends Controller
      */
     public function AddShippingInfo(Request $request)
     {
+        $adress = new ShippingInfo;
+        $adress->user_id = Auth::id();
+        $adress->first_name =  $request->first_name;
+        $adress->last_name =$request->last_name;
+        $adress->phone_number = $request->phone_number;
+        $adress->email= $request->email;
+        $adress->city_name= $request->city_name;
+        $adress->adress= $request->adress;
+        $adress->postal_code= $request->postal_code;
         
-        ShippingInfo::insert([
-            'user_id'=>Auth::id(),
+        // dd($adress);
+        $adress->save();
+        // ShippingInfo::insert([
+        //     'user_id'=>Auth::id(),
            
-            'first_name'=> $request->first_name,
-            'last_name'=> $request->last_name,
-            'phone_number'=> $request->phone_number,
-            'email'=> $request->email,
-            'city_name'=> $request->city_name,
-            'adress'=> $request->adress,
+        //     'first_name'=> $request->first_name,
+        //     'last_name'=> $request->last_name,
+        //     'phone_number'=> $request->phone_number,
+        //     'email'=> $request->email,
+        //     'city_name'=> $request->city_name,
+        //     'adress'=> $request->adress,
          
-            'postal_code'=> $request->postal_code
-        ]);
+        //     'postal_code'=> $request->postal_code
+        // ]);
         return redirect()->route('checkout')->with('message','added info');
         // return redirect()->back()->with('message','added info');
 

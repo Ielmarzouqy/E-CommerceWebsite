@@ -35,7 +35,7 @@
                 </div>
                 <div class="w-1/3">
                     <h2 class="text-gray-800 text-xl font-medium uppercase">{{$pro_name}}</h2>
-                    <p class="text-gray-500 text-sm">Availability: <span class="text-green-600">In Stock</span></p>
+                    <p class="text-gray-500 text-sm">Availability: <span class="text-green-600">In </span></p>
                 </div>
                 <div class="text-primary text-lg font-semibold">{{$item->price}}</div>
                 <a href="#"

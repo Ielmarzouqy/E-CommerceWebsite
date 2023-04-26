@@ -18,7 +18,6 @@
         {{-- <h2>{{ $category }}</h2> --}}
 
             <div  class=" cardd card product p-4 w-full">
-                {{-- <p>{{ $product->description }}</p> --}}
                 <img src="{{ asset('images/' . $product->cover) }}" alt="{{ $product->title }}" class="w-full h-64 bg-gray-300 rounded-lg ">
                 <h3 class="w-56 h-2 mt-4 font-bold rounded-lg" title="{{$product->title}}">{{ Str::limit($product->title,18)}}</h3>
 
@@ -31,7 +30,7 @@
     </div>
     @endforeach
 
-{{-- </div> --}}
+
 </div>
 
 @endforeach

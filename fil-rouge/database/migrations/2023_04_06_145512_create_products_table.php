@@ -20,10 +20,12 @@ return new class extends Migration
             $table->string('cover');
             $table->decimal('price');
             $table->integer('quantity');
+            $table->string('Availability')->default('In Stock');
+
 
             $table->unsignedBigInteger('user_id');
-            $table->integer('category_id')->unsigned()->nullable();
-            $table->integer('sub_category')->unsigned()->nullable();
+            $table->integer('category_id')->unsigned();
+            $table->integer('sub_category')->unsigned();
   
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

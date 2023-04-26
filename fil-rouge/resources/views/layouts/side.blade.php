@@ -16,9 +16,9 @@
             <label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
             <aside class="sidebar bg-violet-300 sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full">
                 <section class="sidebar-title items-center p-4">
-                    
+                    <a href="{{url('shop')}}">
                     <img src="../asset/images/logov.png" class="h-20 mx-16 w-24" alt="">
-                    
+                </a>
                 </section>
                 <section class="sidebar-content">
                     <nav class="menu rounded-md">
