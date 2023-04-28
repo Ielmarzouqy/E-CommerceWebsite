@@ -5,6 +5,12 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
 <script src="https://cdn.tailwindcss.com"></script>
 
 @extends('layouts.navbar')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="">
+            {{ __('Dashboard-user') }}
+        </h2>
+    </x-slot>
 @section ('wishlist')
 <div>
     
@@ -12,10 +18,11 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
             <table class=" my-16 table-hover table">
                 <thead>
                     <tr>
-                        <th>Type</th>
-                        <th>Where</th>
-                        <th>Description</th>
-                        
+                        <th></th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +42,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                             <td>{{$item->price}}</td>
                             <td>{{$item->quantity}}</td>
                             <td>
-                                <a href="{{route('removeitem', $item->id)}}" class=" btn btn-error right-4 py-2 text-center text-sm text-white  border border-primary rounded hover:bg-transparent hover:text-red-400 transition uppercase font-roboto font-medium">remove</a>                                             
+                                <a href="{{route('removeitem', $item->id)}}" class=" btn btn-error right-4 py-2 text-center text-sm text-white  border border-primary rounded hover:bg-pink-500  transition uppercase font-roboto font-medium">remove</a>                                             
                             </td>
                         </tr>
                         @php
@@ -47,16 +54,18 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     <tr>
                         <td></td>
                         <td>total</td>
-                        <td>{{$total}}</td>
+                        <td class="font-bold text-black">{{$total}}</td>
                        
 
-                        <td id="open-modal" class="btn bg-[#e89088]">checkout now</td>
-                     
+                        <td id=""> 
+                            <a href="{{route('shippinginfo')}}"class="  bg-fuchsia-500   btn  right-4 py-2 text-center text-sm text-white  border border-primary rounded hover:bg-fuchsia-700 transition uppercase font-roboto font-medium">
+                            checkout now
+                        </a>
+                    </td>
                     </tr>
                     @endif
 </div>
 
-{{-- <button id="open-modal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Open Modal</button> --}}
 
 <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
   <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -90,44 +99,45 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                             <div>
                                 <label for="first-name" class="  text-gray-600">First Name <span
                                         class="text-primary">*</span></label>
-                                <input type="text" name="first_name" id="first-name" class=" border border-indigo-600 input-box">
+                                <input type="text" name="first_name" id="first-name" class=" border border-indigo-600 input-box" required>
                             </div>
                             <div>
                                 <label for="last-name" class="text-gray-600">Last Name <span
                                         class="text-primary">*</span></label>
-                                <input type="text" name="last_name" id="last-name" class="border border-indigo-600 input-box">
+                                <input type="text" name="last_name" id="last-name" class="border border-indigo-600 input-box" required>
                             </div>
                         </div>
                     
                      
                         <div>
                             <label for="address" class="text-gray-600">Street address</label>
-                            <input type="text" name="adress" id="address" class="border border-indigo-600 input-box">
+                            <input type="text" name="adress" id="address" class="border border-indigo-600 input-box" requuired>
                         </div>
                         <div>
                             <label for="city" class="text-gray-600">City</label>
-                            <input type="text" name="city_name" id="city" class=" border border-indigo-600 input-box">
+                            <input type="text" name="city_name" id="city" class=" border border-indigo-600 input-box" required>
                         </div>
                         <div>
                             <label for="city" class="text-gray-600">Code Postal</label>
-                            <input type="text" name="postal_code" id="city" class=" border border-indigo-600 input-box">
+                            <input type="text" name="postal_code" id="city" class=" border border-indigo-600 input-box" required>
                         </div>
                         <div>
                             <label for="phone" class="text-gray-600">Phone number</label>
-                            <input type="text" name="phone_number" id="phone" class="border border-indigo-600 input-box">
+                            <input type="text" name="phone_number" id="phone" class="border border-indigo-600 input-box" required>
                         </div>
                         <div>
                             <label for="email" class="text-gray-600">Email address</label>
-                            <input type="email" name="email" id="email" class="border border-indigo-600 input-box">
+                            <input type="email" name="email" id="email" class="border border-indigo-600 input-box" required>
+                        </div>
+                        <div class="hidden">
+                            <label for="price" class="text-gray-600">price</label>
+                            <input type="number" name="price" id="price" class="border border-indigo-600 input-box" >
                         </div>
                     
                     </div>
         
                 </div>
         
-                <button type="submit" class="block w-full py-3 px-4 text-center text-white bg-blue-500  border border-indigo-600 rounded-md hover:bg-transparent hover:text-blue-500 transition font-medium">
-                    order
-                </button>
             </div>
     
             
@@ -141,18 +151,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     </div>
   </div>
 </div>
-
-    <!-- breadcrumb -->
-   
-    <!-- ./breadcrumb -->
-
-    <!-- wrapper -->
-   
-    <!-- ./wrapper -->
-
-    
-   
-
+</x-app-layout>
 
 <script>
 
@@ -173,61 +172,26 @@ closeModalButton.addEventListener('click', function() {
 
 
                 @endsection
-
-
-                {{-- <div class="container grid grid-cols-12 sm:grid-cols-4 lg:grid-cols-12  items-start pb-16 pt-4 gap-6">
-    
-                    <div class="col-span-8 border border-gray-200 p-4 rounded">
-                        <h3 class="text-lg font-medium capitalize mb-4">Checkout</h3>
-                        <div class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="first-name" class="text-gray-600">First Name <span
-                                            class="text-primary">*</span></label>
-                                    <input type="text" name="first_name" id="first-name" class=" border border-indigo-600 input-box">
-                                </div>
-                                <div>
-                                    <label for="last-name" class="text-gray-600">Last Name <span
-                                            class="text-primary">*</span></label>
-                                    <input type="text" name="last_name" id="last-name" class="  border border-indigo-600 input-box">
-                                </div>
-                            </div>
-                        
-                            <div>
+                {{-- <div class="bg-white   gap-8" >
+                    <div class=" p-8 flex justify-between">
+                      <div class="w-32 ">
+                        <img src="./asset/images/logov3.png" alt="">
+                      </div>
+                      <div>
+                        <a href="{{url('shop')}}"><ul class="font-bold   text-fuchsia-700 hover:text-fuchsia-900 " > SHOP</a>
                           
-                          
-                            <div>
-                                <label for="phone" class="text-gray-600">Phone number</label>
-                                <input type="text" name="phone_number" id="phone" class=" border border-indigo-600 input-box">
-                            </div>
-                            <div>
-                                <label for="email" class="text-gray-600">Email address</label>
-                                <input type="email" name="email" id="email" class=" border border-indigo-600 input-box">
-                            </div>
-                         
-                            <div>
-                                <label for="city" class="text-gray-600">City</label>
-                                <input type="text" name="city_name" id="city_name" class=" border border-indigo-600 input-box">
-                            </div>
-                            <div>
-                                <label for="address" class="text-gray-600">Address</label>
-                                <input type="text" name="adress" id="adress" class=" border border-indigo-600 input-box">
-                            </div>
-                            <div>
-                                <label for="email" class="text-gray-600">Cade Postal</label>
-                                <input type="number" name="postal_code" id="email" class=" border border-indigo-600 input-box">
-                            </div>
-                          
-                        </div>
-    
-                    </div>
-    
-                    <div class="col-span-4 border border-gray-200 p-4 rounded">
-                        <h4 class="text-gray-800 text-lg mb-4 font-medium uppercase">order summary</h4>
-                        <div class="space-y-2">
-                       
-                        <button type="submit" class="block w-full py-3 px-4 text-center text-white bg-blue-500  border border-indigo-600 rounded-md hover:bg-transparent hover:text-blue-500 transition font-medium">
-                            order
-                        </button>
+                          <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "><li>HOME DECORATION</li></a>
+                          <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "><li>EMBROIDERY ART</li></a>
+                          <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "> <li>CROCHET ART</li></a>
+                        </ul> 
+                      </div>
+                
+                      <div>
+                        <ul class="font-bold text-fuchsia-600 hover:text-fuchsia-800 ">INFORMATION
+                          <a href="" class=" text-fuchsia-600 hover:text-fuchsia-800 "> <li>ABOUT</li></a>
+                          <li class=" text-fuchsia-600 hover:text-fuchsia-800 ">FACEBOOK</li>
+                          <li  class=" text-fuchsia-600 hover:text-fuchsia-800 ">INSTAGRAM</li>
+                        </ul>
+                      </div>
                     </div>
                 </div> --}}

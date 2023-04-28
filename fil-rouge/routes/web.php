@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\CartController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use  App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
@@ -120,3 +121,15 @@ require __DIR__.'/auth.php';
 // Route::get('product',function(){
 //     return 'products.create';
 // });
+
+
+
+// ==============>
+
+
+// Route::post("stripePay", [PaymentController::class, 'stripePost']) ;
+  
+Route::controller(PaymentController::class)->group(function(){
+    Route::get('stripe', 'stripe');
+    Route::post('stripePay', 'stripePost');
+});

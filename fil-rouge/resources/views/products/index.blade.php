@@ -33,7 +33,7 @@
                                 <td>{{$product->quantity}}</td>
                                 <td> <img src="{{ asset('images/' . $product->cover)}}" alt=""> </td>
                               
-                                <td><span class="badge  w-16 h-4 badge-success">{{$product->Availability}}</span>
+                                <td><span class="{{$product->Availability === "in stock" ? '  w-16 h-4 text-green-500': 'text-red-500  w-16 h-4 '}}">{{$product->Availability}}</span>
                                 </td>
                                 <td class="flex gap-2">
                                     <a href="{{route('editproduct',$product->id)}}">

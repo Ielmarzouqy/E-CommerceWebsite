@@ -23,6 +23,9 @@ rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
 />
 <script src="https://cdn.tailwindcss.com"></script>
+
+
+
 </head>
 <body>
     <header class="py-4 shadow-sm bg-white">
@@ -63,7 +66,10 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     <div class="text-2xl">
                         <i class="fa-regular fa-user"></i>
                     </div>
-                    <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400">Account</div>
+                    {{-- <div class="font-semibold text-black rounded-md p-2 focus:rounded-sm hover:text-fuchsia-400">Account</div> --}}
+                    
+                    
+                
                 </a>
             </div>
         </div>
@@ -72,6 +78,9 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     @yield('wishlist')
     @yield('checkout')
     @yield('shop')
+    
+
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 </section> 

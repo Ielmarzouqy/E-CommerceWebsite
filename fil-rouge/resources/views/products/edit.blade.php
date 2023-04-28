@@ -1,19 +1,19 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css
-    " rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js
-    "></script>
-    @extends('dashboard')
+@extends('dashboard')
     @section('create')
     <style>
     
         .cnt{
           
-          background-color: rgb(232, 190, 237)
+          background-color: rgb(232, 190, 237);
+
+        }
+        .btn{
+          background-color: fuchsia;
         }
       </style>
 
 
-        <div class="wrapper p-2 cnt">
+        {{-- <div class="wrapper p-2 cnt">
           <div class="row">
             <div class="col-lg-12 col-sm-12">
               <ul class="breadcrumb panel">
@@ -34,7 +34,7 @@
                   Edit PRODUCTS
                 </header>
                 <div class="panel-body">
-                  {{-- *****alert**** --}}
+                  
                 <form class="form-horizontal" method="post" action="{{route('products.update', ['product'=>$product->id])}}" enctype="multipart/form-data">
                     @csrf
                     @method('put')
@@ -57,7 +57,7 @@
                           @endforeach
                       </select>
                   </div>
-                  {{-- ****endcat**** --}}
+                 
                     <div class="form-group ">
                       <label for="ProductStatus" class="control-label col-lg-2"> Subcategory </label>
                       <div class="col-lg-7">
@@ -128,5 +128,98 @@
               </section>
             </div>
           </div>
-        </div>
+        </div> --}}
+        
+
+        <section class="bg-gray-2 rounded-xl">
+          <div class="p-8 shadow-lg">
+            @if (session()->has('alert'))
+            <div class="flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700">
+                {{ session('alert') }}
+            </div>
+        @endif
+            <form class="form-horizontal" method="post" action="{{route('products.update', ['product'=>$product->id])}}" enctype="multipart/form-data">
+              @csrf
+                @method('put')
+
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <label class="sr-only" for="name">Title of Product</label>
+                <input class="input input-solid rounded-lg" name="title"  value="{{$product->title}}" placeholder="title" type="text" id="name" />
+              </div>
+        
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              
+        
+                <div class=" ">
+                  <label for="ProductStatus" class="sr-only">Category</label>
+                    <div class="p-2">
+                        <select class="input  input-solid rounded-lg" name="category_id" >
+                            {{-- <option value="">Select a Category</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" >{{ $category->name }}</option>
+                
+                            @endforeach --}}
+                              <option value="">Select a Category</option>
+                      
+                              @foreach ($categories as $category)
+                                  <option value="{{ $category->id }}" {{ $category->id === $product->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
+                               
+                              @endforeach
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="">
+                  <label for="ProductStatus" class="sr-only"> Subcategory </label>
+                  <div class="p-2">
+                        <select name="sub_category" id="subcategory_id" class="input input-solid rounded-lg" >
+                        
+                              <option value="">Select a Subcategory</option>
+                                  @foreach ($categories as $category)
+                                  
+                                          @foreach ($category->children as $child)
+                                              <option value="{{ $child->id }}"{{ $child->id === $product->sub_category ? 'selected' : '' }} >{{ $child->name }}</option>
+                                          @endforeach
+                                  @endforeach
+                              
+                        </select>
+                    </div>
+                </div>
+
+
+                <div>
+                  <label class="sr-only" for="quantity">Quantity</label>
+                  <input class="input input-solid rounded-lg" value="{{$product->quantity}}" name="quantity" placeholder="quantity" type="number" id="quantity" />
+                </div>
+
+                <div>
+                  <label class="sr-only" for="price">Price</label>
+                  <input class="input input-solid rounded-lg" name="price"  value="{{$product->price}}" placeholder="Price" type="number" id="price" />
+                </div>
+              </div>
+
+        
+              <div class="w-full p-2">
+                <label class="sr-only" for="description">Description</label>
+        
+                <input class="textarea textarea-solid max-w-full" type="textarea " name="description"  value="{{$product->description}}" placeholder="description" rows="8" id="description">
+              </div>
+              <div>
+                <label class="sr-only p-2" for="image">Image</label>
+                <input type="file" name="cover" value="{{$product->cover}}" class="input input-solid"  set-to="div7" multiple required />
+              </div>
+              
+              <div>
+                <label class="sr-only border-4" for="slug">Slug</label>
+                <input class="input input-solid rounded-lg   "value="{{$product->slug}}" name="slug" placeholder="Slug" type="" id="slug" />
+              </div>
+              <div class=" flex justify-center ">
+                <button name="create_product" class=" bg-fuchsia-500 btn " type="submit"> update </button>
+                {{-- <button type="submit" style="background-color:rgb(184, 115, 249);" class="rounded-lg h-8 w-20 text-white  btn-block">Save</button> --}}
+              </div>
+            </form>
+          </div>
+        </section>
           @endsection
+      

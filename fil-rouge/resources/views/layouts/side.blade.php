@@ -14,7 +14,7 @@
         <div class="sm:w-full  sm:max-w-[18rem]">
             <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state hidden" />
             <label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
-            <aside class="sidebar bg-violet-300 sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full">
+            <aside class="sidebar bg-violet-300 sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full ">
                 <section class="sidebar-title items-center p-4">
                     <a href="{{url('shop')}}">
                     <img src="../asset/images/logov.png" class="h-20 mx-16 w-24" alt="">
