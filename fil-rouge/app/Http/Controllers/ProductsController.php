@@ -153,6 +153,13 @@ class ProductsController extends Controller
             
     }
 
+    public function productByCat(){
+        $products = Product::whereHas('category', function ($query) {
+            $query->where('name', 'Clothing');
+        })->get();
+        dd($products);
+        return view('productbycat');
+    }
     public function destroy(string $id)
     {
 

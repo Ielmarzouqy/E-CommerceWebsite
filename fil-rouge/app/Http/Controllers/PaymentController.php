@@ -7,6 +7,7 @@ use Session;
 use Stripe\Charge;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
@@ -20,13 +21,15 @@ class PaymentController extends Controller
     {
         $user_id = Auth::id();
         $user_id = $request->user_id;
-        $amount = $price =Cart::where('user_id',$user_id)->get()->value('price');
+        $userid = Auth::id();
+        $totalPrice = DB::table('carts')->where('user_id',$userid)->sum('price');
+        // $amount = $price =Cart::where('user_id',$user_id)->get()->value('price');
         // $request->amount ;
         // $cart= new Cart();
         // $cart = Cart::where('user_id',$user_id)->get()->value('price');
 
         // return $request;
-        dd($amount) ;
+        dd($totalPrice) ;
 
         // $money = $request->money ;
         // $stripe = new \Stripe\StripeClient(

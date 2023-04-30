@@ -13,4 +13,7 @@ class ShippingInfo extends Model
     public function users(){
         return $this->hasMany(User::class);
     }
+    // public function cart(){
+    //     return $this->belongsTo(Carts::class);
+    // }
 }

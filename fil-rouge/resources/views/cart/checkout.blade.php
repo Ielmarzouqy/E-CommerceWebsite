@@ -25,11 +25,13 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     <div class="flex bg-blue-100 rounded-lg p-4 mb-4 text-sm text-blue-700">
         {{session('alert')}}
     </div>
+    @endif
+
+    @if(session()->has('newdanger'))
+    <div class="flex bg-red-100 rounded-lg p-4 mb-4 text-sm text-red-700">{{session('newdanger')}}</div>
+    @endif
 
 
-
-
-@endif
 
 <!-- wrapper -->
 <div class="container grid grid-cols-12 items-start gap-6 pt-4 pb-16">
@@ -37,39 +39,26 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
     <!-- wishlist -->
 
     <div class="col-span-12  space-x-8 space-y-4">
-        {{-- @php
-                    $total = 0;
-                @endphp --}}
+       
                 @foreach ($cart_items as $item)
-                     
-                        @php
-                            // $pro_name = App\Models\Product::Where('id',$item->product_id)->get()->value('title');
-                            // $cover = App\Models\Product::Where('id',$item->product_id)->get()->value('cover');
-                            // $avbl = App\Models\Product::Where('id',$item->product_id)->get()->value('Availability');
-
-
-
-                        @endphp
+                      
         <div class="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
             <div class="w-28">
-                <img src="{{ asset('images/' . $pro_cover) }}" alt="product 6" class="w-full">
+                <img src="{{ asset('images/' . $item->products->cover) }}" alt="product 6" class="w-full">
             </div>
             <div class="w-1/3">
-                <h2 class="text-gray-800 text-xl font-medium uppercase">{{$pro_title}}</h2>
+                <h2 class="text-gray-800 text-xl font-medium uppercase">{{$item->products->title}}</h2>
                 {{-- <p class="text-gray-500 text-sm">Availability: <span class="{{$pro->Availability ==="in stock"?'text-green-600':'text-red-600'}}">{{$pro->Availability}}</span></p> --}}
             </div>
             <div class="text-primary text-lg font-semibold">{{$item->price}}</div>
-          
-                @php
-                $total +=  $item->price;
-            @endphp
-       
        
             <div class="text-gray-600 cursor-pointer hover:text-primary">
                 <i class="fa-solid fa-trash"></i>
             </div>
         </div>
         @endforeach
+        @if($totalPrice > 0)
+
         <div  class="flex  p-2 gap-4 justify-center">
             <form action="" method="post">
                 @csrf
@@ -82,6 +71,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     </button>
             </form>
         </div>
+        @endif
         
     </div>
 </div>              

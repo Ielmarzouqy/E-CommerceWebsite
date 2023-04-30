@@ -56,6 +56,28 @@
                             <label for="email" class="text-gray-600">Cade Postal</label>
                             <input type="number" name="postal_code" id="email" class=" border border-indigo-600 input-box">
                         </div>
+
+                        {{-- =========================>amount --}}
+                        <div>
+                            <label for="email" class="text-gray-600">total_price</label>
+                            <input type="number" name="total_price" id="email" value="{{ $totalPrice }}" disabled class=" border border-indigo-600 input-box">
+                        </div>
+                        <div>
+                            <label for="email" class="text-gray-600">number</label>
+                            <input type="number" name="number" id="email" class=" border border-indigo-600 input-box">
+                        </div>
+                        <div>
+                            <label for="email" class="text-gray-600">exp_month</label>
+                            <input type="number" name="exp_month" id="email" class=" border border-indigo-600 input-box">
+                        </div>
+                        <div>
+                            <label for="email" class="text-gray-600">exp_year	</label>
+                            <input type="number" name="exp_year" id="email" class=" border border-indigo-600 input-box">
+                        </div>
+                        <div>
+                            <label for="email" class="text-gray-600">cvc</label>
+                            <input type="number" name="cvc" id="email" class=" border border-indigo-600 input-box">
+                        </div>
                       
                     </div>
 
@@ -81,7 +103,7 @@
 </head>
 <body>
     
-<div class="container">
+{{-- <div class="container">
     
    
     <div class="row">
@@ -161,7 +183,7 @@
     
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ({{ $totalPrice }}$))</button>
                             </div>
                         </div>
                             
@@ -172,7 +194,7 @@
     </div>
         
 </div>
-    
+     --}}
 </body>
     
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

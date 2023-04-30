@@ -17,6 +17,9 @@ class Cart extends Model
         }
         
       public function products(){
-        return $this->hasMany(Products::class);
+        return $this->belongsTo(Product::class, 'product_id');
       }
+    //   public function shipping(){
+    //     return $this->belongsTo(ShippingInfo::class);
+    // }
 }

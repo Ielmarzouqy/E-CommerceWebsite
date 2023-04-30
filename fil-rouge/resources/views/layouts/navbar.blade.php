@@ -34,6 +34,10 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                 <img src="../asset/images/logov3.png" alt="Logo" class="w-32">
             </a>
 
+@if(session()->has('danger'))
+<div class="flex bg-red-100 rounded-lg p-4 mb-4 text-sm text-red-700">{{session('danger')}}</div>
+@endif
+
             <div class="w-full max-w-xl relative flex">
                 <span class="absolute left-4 top-3 text-lg text-gray-400">
                     <i class="fa-solid fa-magnifying-glass"></i>

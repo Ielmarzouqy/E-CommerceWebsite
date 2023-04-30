@@ -26,35 +26,29 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
                     </tr>
                 </thead>
                 <tbody>
-                    @php
-                        $total = 0;
-                    @endphp
                     @foreach ($cart_items as $item)
                         <tr>    
                             @php
-                                $pro_name = App\Models\Product::Where('id',$item->product_id)->get()->value('title');
-                                $cover = App\Models\Product::Where('id',$item->product_id)->get()->value('cover');
+                                // $pro_name = App\Models\Product::Where('id',$item->product_id)->get()->value('title');
+                                // $cover = App\Models\Product::Where('id',$item->product_id)->get()->value('cover');
 
                             @endphp
                     
-                            <td><img src="{{ asset('images/' . $cover) }}" alt="{{ $pro_name }}" class="w-40 h-40 bg-gray-300 rounded-lg "></td>
-                            <td>{{$pro_name}}</td>
+                            <td><img src="{{ asset('images/' . $item->products->cover) }}" alt="{{ $item->products->title }}" class="w-40 h-40 bg-gray-300 rounded-lg "></td>
+                            <td>{{ $item->products->title }}</td>
                             <td>{{$item->price}}</td>
                             <td>{{$item->quantity}}</td>
                             <td>
                                 <a href="{{route('removeitem', $item->id)}}" class=" btn btn-error right-4 py-2 text-center text-sm text-white  border border-primary rounded hover:bg-pink-500  transition uppercase font-roboto font-medium">remove</a>                                             
                             </td>
                         </tr>
-                        @php
-                            $total +=  $item->price;
-                        @endphp
                     @endforeach
-                    @if($total > 0)
+                    @if($totalPrice > 0)
 
                     <tr>
                         <td></td>
                         <td>total</td>
-                        <td class="font-bold text-black">{{$total}}</td>
+                        <td class="font-bold text-black">{{$totalPrice}}</td>
                        
 
                         <td id=""> 

@@ -69,7 +69,14 @@ Route::get('/subcat', [SubcateroryController::class,'index']);
 
 Route::resource('/products', ProductsController::class);
 Route::get('/products{id}/edit', [ProductsController::class, 'edit'])->name('editproduct');
-// Route::post('/create_pro', [ProductsController::class, 'store'])->name('create');
+Route::get('/productByCat', [ProductsController::class, 'productByCat'])->name('productbycat');
+Route::get('/shopcat',function(){
+    return view('productbycat');
+});
+Route::get('/about',function(){
+    return view('about');
+});
+
 
 
 

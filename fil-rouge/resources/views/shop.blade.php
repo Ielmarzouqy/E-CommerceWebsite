@@ -6,6 +6,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <section class="bg-white ">
       <div  id="shop" class="container px-6 py-10 mx-auto ">    
+        {{-- <a class="bg-pink-500 rounded p-4" href="{{route('productbycat')}}"> show by category</a> --}}
         @foreach ($productsByCategory as $category => $products)
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-1 xl:grid-cols-4 lg:grid-cols-4">
         @foreach ($products as $product)
