@@ -34,7 +34,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'd2.png',
                 'price' => 160.59,
                 
-                'quantity'=>2,
+                'quantity'=>23,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -47,7 +47,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'd5.png',
                 'price' => 135.99,
                 
-                'quantity'=>4,
+                'quantity'=>44,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -60,7 +60,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'd4.png',
                 'price' => 231.50,
                
-                'quantity'=>2,
+                'quantity'=>52,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -73,7 +73,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'cap11.png',
                 'price' => 100.54,
                 
-                'quantity'=>2,
+                'quantity'=>67,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -86,7 +86,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'cap2.png',
                 'price' => 120.30,
                 
-                'quantity'=>2,
+                'quantity'=>82,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -99,7 +99,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'cap1.png',
                 'price' => 121.99,
                 
-                'quantity'=>2,
+                'quantity'=>25,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -112,7 +112,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'cap22.png',
                 'price' => 231.43,
                 
-                'quantity'=>2,
+                'quantity'=>34,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 1,
@@ -125,7 +125,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'f7.png',
                 'price' => 15.99,
                
-                'quantity'=>2,
+                'quantity'=>32,
                 'Availability'=>'in stock',
                 'user_id' => 1,
                 'category_id' => 2,
@@ -138,7 +138,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'f1.png',
                 'price' => 132.99,
                 
-                'quantity'=>2,
+                'quantity'=>14,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -151,7 +151,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 1',
                 'cover' => 'f2.jpg',
                 'price' => 89.99,
-                'quantity'=>6,
+                'quantity'=>62,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -165,7 +165,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'f3.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>63,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -178,7 +178,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'c1.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>43,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -191,7 +191,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'c2.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>86,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -204,7 +204,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'c3.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>72,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -217,7 +217,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'c4.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>47,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -230,7 +230,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'emb.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>26,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -243,7 +243,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'emb1.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>34,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -256,7 +256,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'emb2.png',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>21,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -270,7 +270,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'ea1.jpg',
                 'price' => 99,
                 
-                'quantity'=>2,
+                'quantity'=>18,
 
                 'Availability'=>'in stock',
                 'user_id' => 1,
@@ -285,7 +285,7 @@ class ProductTableSeeder extends Seeder
                 'cover' => 'ea2.jpg',
                 'price' => 99,
                 
-                'quantity'=>2,
+                'quantity'=>20,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 
@@ -299,7 +299,7 @@ class ProductTableSeeder extends Seeder
                 'description' => 'Description of Product 2',
                 'cover' => 'ee1.jpg',
                 'price' => 99,
-                'quantity'=>2,
+                'quantity'=>28,
                 'Availability'=>'in stock',
                 'user_id' => 1,
 

@@ -30,7 +30,7 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
 <body>
     <header class="py-4 shadow-sm bg-white">
         <div class=" flex items-center justify-between">
-            <a href="{{url('/')}}">
+            <a href="{{url('shop')}}">
                 <img src="../asset/images/logov3.png" alt="Logo" class="w-32">
             </a>
 

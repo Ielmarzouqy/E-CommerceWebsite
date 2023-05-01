@@ -28,6 +28,10 @@
    @yield('index')
    @yield('allsubcategories')
    @yield('allcategories')
+   @yield('cart')
+   @yield('order')
+   @yield('payment')
+
 
 </x-app-layout>
 @endsection

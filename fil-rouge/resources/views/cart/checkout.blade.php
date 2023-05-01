@@ -72,7 +72,6 @@ href="https://cdn.jsdelivr.net/npm/rippleui@1.11.0/dist/css/styles.css"
             </form>
         </div>
         @endif
-        
     </div>
 </div>              
                 @endsection

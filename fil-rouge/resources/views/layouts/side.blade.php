@@ -34,22 +34,22 @@
                                 </li>
     
                                 <li class="menu-item ">
-                                    <a href="" class="flex gap-4">
+                                    <a href="{{route('getallcarts')}}" class="flex gap-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="opacity-75" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M7 9m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path>
                                         <path d="M14 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
                                         <path d="M17 9v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v6a2 2 0 0 0 2 2h2"></path>
                                     </svg>
-                                    <span>Order Management</span>
+                                    <span>Cart Management</span>
                                 </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="" class="flex gap-4">
+                                    <a href="{{route('getallorders')}}" class="flex gap-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
-                                    <span>Customer Management</span>
+                                    <span>Order Management </span>
                                 </a>
                                 </li>
                                 <li>
@@ -145,7 +145,7 @@
                             <span class="menu-title">Settings</span>
                             <ul class="menu-items">
                                 <li class="menu-item">
-                                    <a href="">
+                                    <a href="{{route('getpayment')}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="opacity-75" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M3 21l18 0"></path>

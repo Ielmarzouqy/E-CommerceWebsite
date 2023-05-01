@@ -38,6 +38,15 @@ Route::get('remove_cart_item{id}','RemoveCartItem')->name('removeitem');
 
     route::get('/checkout','checkout')->name('checkout');
     route::get('/shipping_adress','GetShippingAdress')->name('shippinginfo');
+    route::get('/get-all-carts','getAllCarts')->name('getallcarts');
+    route::get('/get-all-orders','getAllOrders')->name('getallorders');
+    Route::put('/orders/{id}/status', 'updateOrderStatus')->name('update.order.status');
+
+    route::get('/get-all-payment','getPayment')->name('getpayment');
+
+
+
+
 
 
 });

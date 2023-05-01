@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ShippingInfo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -156,57 +157,145 @@ return view('cart.shipping-cart', compact('cart_items', 'totalPrice' /*,'pro_tit
           
     }
 
-    public function PlaceOrder(){
-//        
-$userid = Auth::id();
-    $shipping_info = ShippingInfo::where('user_id',$userid)->first();
+//     public function PlaceOrder(){
+        
+//         $userid = Auth::id();
+//             $shipping_info = ShippingInfo::where('user_id',$userid)->first();
+//             $cart_items = Cart::where('user_id', $userid)->get();
+//             $totalPrice = DB::table('carts')->where('user_id',$userid)->sum('price');
+//             // $totalPricePayed = ShippingInfo::where('total_price',$totalPrice)->get();
+//             // $totalPricePayed;
+//             $order_items = [];
+
+//             foreach($cart_items as $item){
+//                 $order_items[] = [
+//                     'user_id'=>$userid,
+//                     'shipping_phoneNumber'=>$shipping_info->phone_number,
+//                     'shipping_city'=>$shipping_info->city_name,
+//                     'shipping_postalCode'=>$shipping_info->postal_code,
+//                     'product_id'=>$item->product_id,
+//                     'quantity'=>$item->quantity,
+//                     'total_price'=>$item->price,
+//                 ];
+            
+//             dd($totalPrice);
+            
+//                 if(!$totalPrice ){
+//                     session()->flash('newdanger', 'khalas');
+//                     return back();
+//                 }else{
+//                     $id = $item->id;
+//                 $delete = Cart::findOrFail($id);
+//                 $delete->delete();
+//                 }    
+//         }
+//         Order::insert($order_items);
+//             session()->flash('alert', 'your order placed successfully');
+//         return redirect()->route('pendingorder');
+
+// }
+
+public function PlaceOrder(){
+    $userid = Auth::id();
+    $shipping_info = ShippingInfo::where('user_id', $userid)->first();
     $cart_items = Cart::where('user_id', $userid)->get();
-
-    $totalPrice = DB::table('carts')->where('user_id',$userid)->sum('price');
-    $totalPricePayed = ShippingInfo::where('total_price',$totalPrice)->get();
-    $totalPricePayed;
+    
+    $totalPrice = $shipping_info->total_price; // get the total price from shipping info
+    $cartTotalPrice = $cart_items->sum('price'); // sum the prices of all items in the cart
+    
+    // dd($totalPrice,$cartTotalPrice);
+    if($totalPrice != $cartTotalPrice){
+        session()->flash('newdanger', 'The total price does not match. Please check your cart items and shipping information again.');
+        return back();
+    }
+    
     $order_items = [];
-
+    
     foreach($cart_items as $item){
         $order_items[] = [
-            'userid'=>$userid,
-            'shipping_phoneNumber'=>$shipping_info->phone_number,
-            'shipping_city'=>$shipping_info->city_name,
-            'shipping_postalCode'=>$shipping_info->postal_code,
-            'product_id'=>$item->product_id,
-            'quantity'=>$item->quantity,
-            'total_price'=>$item->price,
+            'user_id' => $userid,
+            'shipping_phoneNumber' => $shipping_info->phone_number,
+            'shipping_city' => $shipping_info->city_name,
+            'shipping_postalCode' => $shipping_info->postal_code,
+            'product_id' => $item->product_id,
+            'quantity' => $item->quantity,
+            'total_price' => $item->price,
         ];
-    
-    // dd($totalPrice,$totalPricePayed);
-    
-    if($totalPrice != $item->price){
-        session()->flash('newdanger', 'khalas');
-        return back();
-    }else{
-        $id = $item->id;
-    $delete = Cart::findOrFail($id);
-    $delete->delete();
+        
+        // delete the cart item
+        $item->delete();
     }
-
     
+    Order::insert($order_items);
+    session()->flash('alert', 'Your order has been placed successfully.');
+    
+    // return redirect()->route('pendingorder');
+    return back();
 }
 
-Order::insert($order_items);
-    session()->flash('alert', 'your order placed successfully');
-
-   
-
-return redirect()->route('pendingorder');
-
-}
-
-    
     public function removeCartItem($id)
     {
-            $delete = Cart::findOrFail($id);
-            $delete->delete();
+            $item = Cart::findOrFail($id);
+            // dd($delete);
+            $product = Product::find($item->product_id);
+            $product->quantity += $item->quantity;
+            $product->update();
+            $item->delete();
+
         return redirect()->back();
     
+    }
+    
+    public function getAllCarts(){
+        $carts = Cart::with("products")->get()->all();
+
+        return view('cart.index', compact('carts'));
+    }
+    // public function getAllOrders(){
+        
+    //     $orders = Order::with("user")
+    //     ->join("products", "product_id", "=", "products.id")
+    //     ->select("orders.*", "products.title")
+    //     ->get();
+      
+    //     return view('cart.order', compact('orders'));
+    // }
+
+    public function getAllOrders(){
+        $orders = Order::with("user")
+            ->join("products", "product_id", "=", "products.id")
+            ->select("orders.*", "products.title")
+            ->get();
+    
+        // loop through each order and add the status
+        // foreach($orders as $order) {
+        //     if($order->is_paid) {
+        //         $order->status = 'Paid';
+        //     } else if($order->is_pending) {
+        //         $order->status = 'Pending';
+        //     } else {
+        //         $order->status = 'Failed';
+        //     }
+        // }
+    
+        return view('cart.order', compact('orders'));
+    }
+    
+    public function updateOrderStatus(Request $request, $orderId)
+    {
+        $order = Order::findOrFail($orderId);
+        $order->status = $request->input('status');
+        $order->update();
+    session()->flash('success',' the order item status is updated successfully ');
+        return redirect()->back();
+    }
+
+
+    public function getPayment(){
+        $payments =  ShippingInfo::get();
+        
+        // $payment->get()->all();
+        // dd($payment);
+        return view('cart.payment', compact('payments'));
     }
 }
